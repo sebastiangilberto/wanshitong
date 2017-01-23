@@ -1,110 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
        http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-	<context:component-scan base-package="ar.com.sgilberto.*"/>
+	<context:component-scan base-package="ar.com.sgilberto.*" />
 
 	<!-- Configuración de MVC -->
 	<mvc:resources order="1" location="/resources/" mapping="/resources/**" />
-	<mvc:resources location="/images/" mapping="/images/**" />
-	<mvc:resources location="/assets/" mapping="/assets/**" />
-	<mvc:resources location="/htdocs/" mapping="/htdocs/**" />
-	
+
+	<mvc:annotation-driven />
+
 	<bean id="viewResolver"
-	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-	<property name="prefix" value="/WEB-INF/jsp/" />
-	<property name="suffix" value=".jsp" />
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
 	</bean>
-	
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="org.postgresql.Driver" />
-        <property name="url" value="jdbc:postgresql://127.0.0.1:5432/wanshitong"/> 
-	    <property name="username" value="wanshitong"/>
-	    <property name="password" value="wanshitong"/>
-    </bean>
-	
-	<!-- Hibernate 3 Annotation SessionFactory Bean definition-->
-    <bean id="hibernate3AnnotatedSessionFactory"
-        class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />
-        <property name="packagesToScan" value="ar.com.sgilberto.entity" />
-	    <property name="hibernateProperties">
-            <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
-                <prop key="hibernate.current_session_context_class">thread</prop>
-                <prop key="hibernate.show_sql">true</prop>
-            </props>
-        </property>
-    </bean>
-     
-	
-	
-	
-	
-	
-<!-- 		<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"> -->
-<!-- 		<property name="entityManagerFactory" ref="entityManagerFactory" /> -->
-<!-- 		<property name="jpaDialect"> -->
-<!-- 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" /> -->
-<!-- 		</property> -->
-<!-- 	</bean> -->
-	
-	
-<!-- 	<bean id="entityManagerFactory" -->
-<!-- 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> -->
-<!-- 		<property name="packagesToScan" value="ar.com.conexia.pruebaSpring.entity" /> -->
-<!-- 		<property name="dataSource" ref="dataSourcePrueba" /> -->
-<!-- 		<property name="jpaVendorAdapter"> -->
-<!-- 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"> -->
-<!-- 				<property name="generateDdl" value="false" /> -->
-<!-- 				<property name="database" value="POSTGRESQL" /> -->
-<!-- 			</bean> -->
-<!-- 		</property> -->
-<!-- 	</bean> -->
 
-<!-- 	<bean id="dataSourcePrueba" class="org.springframework.jdbc.datasource.DriverManagerDataSource" > -->
-<!-- 	    <property name="driverClassName" value="org.postgresql.Driver"/> -->
-<!-- 	    <property name="url" value="jdbc:postgresql://192.168.150.248:5432/encontrar"/> -->
-<!-- 	    <property name="username" value="encontrar"/> -->
-<!-- 	    <property name="password" value="encontrar"/> -->
-<!-- 	</bean> -->
+	<!-- Desarrollo -->
+	<!-- 
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+		<property name="driverClassName" value="org.postgresql.Driver" /> <property 
+		name="url" value="jdbc:postgresql://127.0.0.1:5432/wanshitong" /> <property 
+		name="username" value="wanshitong" /> <property name="password" value="wanshitong" 
+		/>
+	</bean>
+	-->
 
-<!-- 	<bean id="poolPrueba" class="org.apache.commons.pool.impl.GenericObjectPool"> -->
-<!-- 	    <property name="minEvictableIdleTimeMillis"><value>300000</value></property> -->
-<!-- 	    <property name="timeBetweenEvictionRunsMillis"><value>60000</value></property> -->
-<!-- 	</bean> -->
-	 
-<!-- 	<bean id="dsConnectionFactoryPrueba" class="org.apache.commons.dbcp.DataSourceConnectionFactory"> -->
-<!-- 	    <constructor-arg><ref bean="dataSourcePrueba"/></constructor-arg> -->
-<!-- 	</bean> -->
-	 
-<!-- 	<bean id="poolableConnectionFactoryPrueba" class="org.apache.commons.dbcp.PoolableConnectionFactory"> -->
-<!-- 	    <constructor-arg index="0"><ref bean="dsConnectionFactoryPrueba"/></constructor-arg> -->
-<!-- 	    <constructor-arg index="1"><ref bean="poolPrueba"/></constructor-arg> -->
-<!-- 	    <constructor-arg index="2"><null/></constructor-arg> -->
-<!-- 	    <constructor-arg index="3"><null/></constructor-arg> -->
-<!-- 	    <constructor-arg index="4"><value>false</value></constructor-arg> -->
-<!-- 	    <constructor-arg index="5"><value>true</value></constructor-arg> -->
-<!-- 	</bean> -->
-	 
-<!-- 	<bean id="pooledDS_Prueba" class="org.apache.commons.dbcp.PoolingDataSource" depends-on="poolableConnectionFactoryPrueba"> -->
-<!-- 	    <constructor-arg><ref bean="poolPrueba"/></constructor-arg> -->
-<!-- 	</bean> -->
+	<!-- Producción -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver" />
+		<property name="url"
+			value="jdbc:postgresql://ec2-174-129-41-23.compute-1.amazonaws.com:5432/d66bdpku278dsn" />
+		<property name="username" value="ekmjgslcannfgl" />
+		<property name="password"
+			value="1d083b4cd26961340f1e0efc88a65622764d06f9e7862d1b8d17ecc9c2861ffb" />
+	</bean>
 
+	<!-- Hibernate 3 Annotation SessionFactory Bean definition -->
+	<bean id="hibernate3AnnotatedSessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan" value="ar.com.sgilberto.entity" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
 
 </beans>
-
-
