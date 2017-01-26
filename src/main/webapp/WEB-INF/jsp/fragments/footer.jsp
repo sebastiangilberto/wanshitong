@@ -1,19 +1,16 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <div class="container">
 	<hr>
 	<footer>
-		<p>&copy; Mkyong.com 2015</p>
+		<p id="copyright">&copy; Sebastian Gilberto</p>
+		<a id="sgilbertoLink" href="https://github.com/sgilberto">https://github.com/sgilberto</a>
 	</footer>
 </div>
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<spring:url value="/resources/js/jquery-3.1.1.min.js" var="jqueryJs" />
+<spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />
+<spring:url value="/resources/js/wanshitong.js" var="wanshitongJs" />
 
-<spring:url value="/resources/core/js/hello.js" var="coreJs" />
-<spring:url value="/resources/core/js/bootstrap.min.js"
-	var="bootstrapJs" />
-
-<script src="${coreJs}"></script>
+<script src="${jqueryJs}"></script>
 <script src="${bootstrapJs}"></script>
-
-
+<script src="${wanshitongJs}"></script>
