@@ -33,23 +33,22 @@
 	<mvc:annotation-driven />
 
 	<!-- Desarrollo -->
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+		<property name="driverClassName" value="org.postgresql.Driver" /> <property 
+		name="url" value="jdbc:postgresql://127.0.0.1:5432/wanshitong" /> <property 
+		name="username" value="wanshitong" /> <property name="password" value="wanshitong" 
+		/> </bean> -->
 
+	<!-- Producción -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.postgresql.Driver" />
-		<property name="url" value="jdbc:postgresql://127.0.0.1:5432/wanshitong" />
-		<property name="username" value="wanshitong" />
-		<property name="password" value="wanshitong" />
+		<property name="url"
+			value="jdbc:postgresql://ec2-174-129-41-23.compute-1.amazonaws.com:5432/d66bdpku278dsn" />
+		<property name="username" value="ekmjgslcannfgl" />
+		<property name="password"
+			value="1d083b4cd26961340f1e0efc88a65622764d06f9e7862d1b8d17ecc9c2861ffb" />
 	</bean>
-
-
-	<!-- Producción -->
-	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
-		<property name="driverClassName" value="org.postgresql.Driver" /> <property 
-		name="url" value="jdbc:postgresql://ec2-174-129-41-23.compute-1.amazonaws.com:5432/d66bdpku278dsn" 
-		/> <property name="username" value="ekmjgslcannfgl" /> <property name="password" 
-		value="1d083b4cd26961340f1e0efc88a65622764d06f9e7862d1b8d17ecc9c2861ffb" 
-		/> </bean> -->
 
 	<!-- Hibernate 3 Annotation SessionFactory Bean definition -->
 	<bean id="hibernate3AnnotatedSessionFactory"
