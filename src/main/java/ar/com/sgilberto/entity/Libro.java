@@ -13,11 +13,11 @@ import javax.persistence.Table;
 public class Libro {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO, generator="libros_id_seq")
-	@SequenceGenerator(name="libros_id_seq", sequenceName="libros_id_seq")
-	@Column(name="id")
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "libros_id_seq")
+	@SequenceGenerator(name = "libros_id_seq", sequenceName = "libros_id_seq")
+	@Column(name = "id")
 	private Integer id;
-	
+
 	@Column(name = "titulo")
 	private String titulo;
 
@@ -26,6 +26,9 @@ public class Libro {
 
 	@Column(name = "genero")
 	private String genero;
+
+	@Column(name = "tapa")
+	private String tapa;
 
 	public String getTitulo() {
 		return titulo;
@@ -51,9 +54,17 @@ public class Libro {
 		this.genero = genero;
 	}
 
+	public String getTapa() {
+		return tapa;
+	}
+
+	public void setTapa(String tapa) {
+		this.tapa = tapa;
+	}
+
 	@Override
 	public String toString() {
-		return "LibroEntity [titulo=" + titulo + ", autor=" + autor + ", genero=" + genero + "]";
+		return "Libro [titulo=" + titulo + ", autor=" + autor + ", genero=" + genero + ", tapa=" + tapa + "]";
 	}
 
 	@Override
@@ -62,6 +73,8 @@ public class Libro {
 		int result = 1;
 		result = prime * result + ((autor == null) ? 0 : autor.hashCode());
 		result = prime * result + ((genero == null) ? 0 : genero.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((tapa == null) ? 0 : tapa.hashCode());
 		result = prime * result + ((titulo == null) ? 0 : titulo.hashCode());
 		return result;
 	}
@@ -84,6 +97,16 @@ public class Libro {
 			if (other.genero != null)
 				return false;
 		} else if (!genero.equals(other.genero))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (tapa == null) {
+			if (other.tapa != null)
+				return false;
+		} else if (!tapa.equals(other.tapa))
 			return false;
 		if (titulo == null) {
 			if (other.titulo != null)

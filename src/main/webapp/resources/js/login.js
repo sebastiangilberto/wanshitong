@@ -1,18 +1,18 @@
-document.addEventListener("load", function() {
-	setTimeout(hideURLbar, 0);
-}, false);
-function hideURLbar() {
-	window.scrollTo(0, 1);
-}
-
-$("#loginForm").validify({
-	onSubmit : function(e, $this) {
-		$this.find('.alert').removeClass('hidden')
-	},
-	onFormSuccess : function(form) {
-		console.log("Form is valid now!")
-	},
-	onFormFail : function(form) {
-		console.log("Form is not valid :(")
+$(function() {
+	if (document.formLogin.username.value == ""
+			&& document.formLogin.password.value == "") {
+		alert("Username and password are required");
+		document.formLogin.username.focus();
+		return false;
+	}
+	if (document.formLogin.username.value == "") {
+		alert("Username is required");
+		document.formLogin.username.focus();
+		return false;
+	}
+	if (document.formLogin.password.value == "") {
+		alert("Password is required");
+		document.formLogin.password.focus();
+		return false;
 	}
 });

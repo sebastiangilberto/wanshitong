@@ -15,15 +15,21 @@
 	<context:component-scan base-package="ar.com.sgilberto.*" />
 
 	<!-- Configuración de MVC -->
-	
+
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	
-	<mvc:resources location="/resources/" mapping="/resources/**" cache-period="31556926"/>
-	
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="messages" />
+	</bean>
+
+	<mvc:resources location="/resources/" mapping="/resources/**"
+		cache-period="31556926" />
+
 	<mvc:annotation-driven />
 
 	<!-- Desarrollo -->

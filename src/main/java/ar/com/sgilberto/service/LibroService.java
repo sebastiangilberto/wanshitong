@@ -47,6 +47,7 @@ public final class LibroService implements ILibroService {
 			libro.setAutor(item.getAutor());
 			libro.setTitulo(item.getTitulo());
 			libro.setGenero(item.getGenero());
+			libro.setTapa(item.getTapa());
 
 			result.add(libro);
 		}

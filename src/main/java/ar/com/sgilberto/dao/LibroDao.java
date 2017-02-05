@@ -38,8 +38,6 @@ public class LibroDao implements ILibroDao {
 
 		List<Libro> libros = session.createCriteria(Libro.class).list();
 
-		System.out.println("BABNA");
-
 		return libros;
 	}
 

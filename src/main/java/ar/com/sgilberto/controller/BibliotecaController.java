@@ -28,7 +28,7 @@ public class BibliotecaController {
 
 		model.addAttribute("libros", libros);
 
-		return "libros";
+		return "biblioteca";
 	}
 
 	// ver detalle de un libro
