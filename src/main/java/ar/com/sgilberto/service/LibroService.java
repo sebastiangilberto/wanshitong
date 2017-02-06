@@ -19,18 +19,23 @@ public final class LibroService implements ILibroService {
 
 	@Override
 	@Transactional
-	public void addLibro(LibroDto Libro) {
+	public void addLibro(LibroDto libro) {
 		Libro libroEntity = new Libro();
-		// seteo valores del entity basados en el dto
-		this.libroDao.addLibro(libroEntity);
+		
+		libroEntity.setAutor(libro.getAutor());
+		libroEntity.setTitulo(libro.getTitulo());
+		libroEntity.setGenero(libro.getGenero());
+		libroEntity.setTapa(libro.getTapa());
+		
+		this.libroDao.save(libroEntity);
 	}
 
 	@Override
 	@Transactional
-	public void updateLibro(LibroDto Libro) {
+	public void updateLibro(LibroDto libro) {
 		Libro libroEntity = new Libro();
 		// seteo valores del entity basados en el dto
-		this.libroDao.updateLibro(libroEntity);
+		this.libroDao.update(libroEntity);
 	}
 
 	@Override
@@ -40,7 +45,7 @@ public final class LibroService implements ILibroService {
 		// obtengo los librosEntitys y los paso a dto
 
 		List<LibroDto> result = new ArrayList<LibroDto>();
-		List<Libro> listLibros = this.libroDao.getLibros();
+		List<Libro> listLibros = this.libroDao.getAll();
 
 		for (Libro item : listLibros) {
 			LibroDto libro = new LibroDto();
@@ -72,6 +77,6 @@ public final class LibroService implements ILibroService {
 	@Override
 	@Transactional
 	public void removeLibro(int id) {
-		this.libroDao.removeLibro(id);
+		this.libroDao.remove(id);
 	}
 }

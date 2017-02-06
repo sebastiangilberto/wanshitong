@@ -6,14 +6,14 @@ import ar.com.sgilberto.entity.Libro;
 
 public interface ILibroDao {
 
-	public void addLibro(Libro libro);
+	public void save(Libro libro);
 
-	public void updateLibro(Libro libro);
+	public void update(Libro libro);
 
-	public List<Libro> getLibros();
+	public List<Libro> getAll();
 
-	public Libro getLibroById(int id);
+	public Libro getById(int id);
 
-	public void removeLibro(int id);
+	public void remove(int id);
 
 }

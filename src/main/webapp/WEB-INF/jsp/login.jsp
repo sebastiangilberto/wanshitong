@@ -4,21 +4,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Head -->
-<head>
+<!-- Header -->
+<jsp:include page="fragments/header.jsp" />
 
-<!-- Meta-Tags -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-<!-- Javascript -->
+<!-- Javascript & Css Login -->
 <link rel="stylesheet" href="resources/css/login.css" type="text/css"
 	media="all">
 <script src="resources/js/login.js"></script>
 
-</head>
-
-<jsp:include page="fragments/header.jsp" />
 <!-- Body -->
 <body>
 
@@ -31,8 +24,10 @@
 			<form:form id="loginForm" method="POST"
 				action="${pageContext.request.contextPath}/login"
 				commandName="UsuarioDto">
-				<form:input path="username" placeholder="Username" />
-				<form:password path="password" placeholder="Password" />
+				<form:input id="usernameLogin" path="username"
+					placeholder="Username" required="required"/>
+				<form:password id="passwordLogin" path="password"
+					placeholder="Password" required="required"/>
 				<ul class="tick w3layouts agileits">
 					<li><input type="checkbox" id="brand1"> <label
 						for="brand1"><span></span>Remember me</label></li>
@@ -43,11 +38,13 @@
 				<a href="#">Forgot Password?</a>
 				<div class="clear"></div>
 			</form:form>
-			<c:if test="${not empty errorMessage}">
-				<p class="error">
+			<div class="error">
+				<c:if test="${not empty errorMessage}">
 					<c:out value="${errorMessage}" />
-				</p>
-			</c:if>
+				</c:if>
+			</div>
+			<div class="alert alert-success hidden" role="alert">Login
+				Successfully</div>
 		</div>
 
 		<div class="register w3layouts agileits">
@@ -75,6 +72,7 @@
 
 </body>
 
+<!-- Footer -->
 <jsp:include page="fragments/footer.jsp" />
 
 </html>

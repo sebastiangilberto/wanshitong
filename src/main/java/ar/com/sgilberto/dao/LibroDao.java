@@ -2,10 +2,8 @@ package ar.com.sgilberto.dao;
 
 import java.util.List;
 
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,23 +15,32 @@ public class LibroDao implements ILibroDao {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-
+	
 	@Override
-	public void addLibro(Libro libro) {
-		Session session = this.sessionFactory.openSession();
-		session.persist(libro);
+	@Transactional
+	public void save(Libro libro) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		try{
+			session.persist(libro);
+			session.getTransaction().commit();
+		} catch(Exception e){
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
 	}
 
 	@Override
-	public void updateLibro(Libro libro) {
+	@Transactional
+	public void update(Libro libro) {
 		Session session = this.sessionFactory.openSession();
 		session.update(libro);
 	}
 
 	@SuppressWarnings("unchecked")
-	@Transactional
 	@Override
-	public List<Libro> getLibros() {
+	public List<Libro> getAll() {
 		Session session = this.sessionFactory.openSession();
 
 		List<Libro> libros = session.createCriteria(Libro.class).list();
@@ -41,9 +48,9 @@ public class LibroDao implements ILibroDao {
 		return libros;
 	}
 
-	@Transactional
 	@Override
-	public Libro getLibroById(int id) {
+	@Transactional
+	public Libro getById(int id) {
 		Session session = this.sessionFactory.openSession();
 		Libro libro = (Libro) session.load(Libro.class, new Integer(id));
 		return libro;
@@ -51,7 +58,7 @@ public class LibroDao implements ILibroDao {
 
 	@Transactional
 	@Override
-	public void removeLibro(int id) {
+	public void remove(int id) {
 		Session session = this.sessionFactory.openSession();
 		Libro libro = (Libro) session.load(Libro.class, new Integer(id));
 		if (null != libro) {

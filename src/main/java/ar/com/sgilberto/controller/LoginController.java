@@ -52,7 +52,7 @@ public class LoginController {
 
 			System.out.println("Usuario Invalido");
 			model.addAttribute("errorMessage", "Usuario o Password incorrectos");
-			model.addAttribute("UsuarioDto", usuario);
+			model.addAttribute("UsuarioDto", new UsuarioDto());
 			return new ModelAndView("login");
 
 		}
