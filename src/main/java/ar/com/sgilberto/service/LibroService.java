@@ -49,6 +49,7 @@ public final class LibroService implements ILibroService {
 
 		for (Libro item : listLibros) {
 			LibroDto libro = new LibroDto();
+			libro.setId(item.getId());
 			libro.setAutor(item.getAutor());
 			libro.setTitulo(item.getTitulo());
 			libro.setGenero(item.getGenero());

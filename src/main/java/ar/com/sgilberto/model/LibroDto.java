@@ -2,6 +2,8 @@ package ar.com.sgilberto.model;
 
 public class LibroDto {
 
+	private Integer id;
+
 	private String titulo;
 
 	private String autor;
@@ -19,6 +21,14 @@ public class LibroDto {
 		this.autor = autor;
 		this.genero = genero;
 		this.tapa = tapa;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getTitulo() {

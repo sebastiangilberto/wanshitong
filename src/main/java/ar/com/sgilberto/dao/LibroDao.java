@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,20 +16,18 @@ public class LibroDao implements ILibroDao {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+
 	@Override
 	@Transactional
 	public void save(Libro libro) {
-		
-		Session session = sessionFactory.getCurrentSession();
-		try{
-			session.persist(libro);
-			session.getTransaction().commit();
-		} catch(Exception e){
-			e.printStackTrace();
-		} finally {
-			session.close();
-		}
+		Session session = this.sessionFactory.openSession();
+
+		Transaction tx = session.beginTransaction();
+		session.persist(libro);
+		tx.commit();
+
+		session.close();
+
 	}
 
 	@Override
@@ -62,7 +61,11 @@ public class LibroDao implements ILibroDao {
 		Session session = this.sessionFactory.openSession();
 		Libro libro = (Libro) session.load(Libro.class, new Integer(id));
 		if (null != libro) {
+			Transaction tx = session.beginTransaction();
 			session.delete(libro);
+			tx.commit();
+
+			session.close();
 		}
 	}
 }

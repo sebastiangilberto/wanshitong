@@ -30,6 +30,14 @@ public class Libro {
 	@Column(name = "tapa")
 	private String tapa;
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public String getTitulo() {
 		return titulo;
 	}

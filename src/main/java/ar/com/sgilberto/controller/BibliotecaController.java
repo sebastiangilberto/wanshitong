@@ -50,19 +50,31 @@ public class BibliotecaController {
 
 	}
 
+	// Agregar un nuevo libro
 	@RequestMapping(value = "/addLibro", method = RequestMethod.POST)
-	public ModelAndView addBook(@ModelAttribute LibroDto libro, Model model, HttpServletRequest request) {
+	public ModelAndView addLibro(@ModelAttribute LibroDto libro, Model model, HttpServletRequest request) {
 
 		this.libroService.addLibro(libro);
 		
-		return new ModelAndView("redirect:/");
+		return new ModelAndView("redirect:/biblioteca");
 	}
 
+	// borrar libro
+	@RequestMapping(value = "/removeLibro/{id}", method = RequestMethod.POST)
+	public boolean removeLibro(@PathVariable Integer id, Model model, HttpServletRequest request) {
+
+		this.libroService.removeLibro(id);
+		
+		return true;
+	}
+	
 	// ver detalle de un libro
 	@RequestMapping(value = "/detalle{id}", method = RequestMethod.GET)
 	public ModelAndView verDetalle(@PathVariable("id") String id, Model model, HttpServletRequest request) {
 
 		return new ModelAndView("detalle");
 	}
+	
+	
 
 }
