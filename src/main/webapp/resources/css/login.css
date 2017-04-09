@@ -1,10 +1,3 @@
-/*--
-    Author: W3layouts
-    Author URL: http://w3layouts.com
-    License: Creative Commons Attribution 3.0 Unported
-    License URL: http://creativecommons.org/licenses/by/3.0/
---*/
-
 /*-- Reset Code --*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 	blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
@@ -91,8 +84,9 @@ a {
 }
 
 .underline {
-	padding-bottom: 3px;
+	padding-bottom: 5px;
 	border-bottom: 1px solid #eee;
+	margin: 0 0 20px 0;
 }
 
 nav.vertical ul li {
@@ -111,8 +105,6 @@ img {
 
 /*-- Index-Page-Styling --*/
 body {
-	font-family: 'Roboto', sans-serif;
-	text-align: center;
 	background: url("../images/background.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -121,6 +113,9 @@ body {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
+	color: #FFF;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
 }
 
 body a {
@@ -132,93 +127,90 @@ body a {
 	text-decoration: none;
 }
 
+input[type="button"], input[type="submit"] {
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
+
 h1 {
-	font-size: 45px;
-	font-weight: 500;
-	letter-spacing: 4px;
-	margin: 60px 0;
-	color: #FFFFFF;
+	font-size: 50px;
+	font-weight: 700;
+	color: #FFF;
+	letter-spacing: 2px;
+	margin: 100px auto;
 }
 
-.container {
-	width: 50%;
+.container-agile {
+	width: 25%;
 	margin: 0 auto;
-	padding: 40px;
-	background-color: rgba(10, 10, 10, 0.77);
-	border: 2px ridge rgba(238, 238, 238, 0.13);
-	border-radius: 5px;
-	-moz-box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.57);
-	-webkit-box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.57);
-	box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.57);
-	border-bottom: none;
-	border-bottom-left-radius: initial;
-	border-bottom-right-radius: initial;
-}
-
-.login {
-	width: 45%;
-	float: left;
-	text-align: left;
-	padding-right: 40px;
-}
-
-::-webkit-input-placeholder {
-	color: #CCC;
-}
-
-:-moz-placeholder {
-	color: #CCC;
-}
-
-::-moz-placeholder {
-	color: #CCC;
-}
-
-:-ms-input-placeholder {
-	color: #CCC;
 }
 
 h2 {
-	font-size: 35px;
-	text-align: left;
-	color: #FFF;
+	font-size: 40px;
 	font-weight: 100;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 
-ul.tick {
-	float: left;
+input[type="text"], input[type="password"] {
+	width: 100%;
+	padding: 15px 10px 15px 50px;
+	font-size: 14px;
+	background: transparent;
+	border: 2px solid #FFF;
+	border-radius: 5px;
+	outline: none;
+	margin-bottom: 20px;
+	color: #FFF;
+}
+
+input[type="text"] {
+	background: url("../images/mail.png") no-repeat 13px 11px;
+	background-size: 25px;
+}
+
+input[type="password"] {
+	background: url("../images/password.png") no-repeat 13px 11px;
+	background-size: 25px;
+}
+
+ul.agileinfotickwthree {
 	list-style: none;
 	display: inline-block;
 	width: 100%;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
+	text-align: left;
+	padding-left: 10px;
 }
 
-ul.tick li input[type="checkbox"] {
+ul.agileinfotickwthree li input[type="checkbox"] {
 	display: none;
 }
 
-ul.tick li input[type="checkbox"]+label {
+ul.agileinfotickwthree li input[type="checkbox"]+label {
 	position: relative;
 	padding-left: 30px;
 	border: #F0F8FF;
 	display: inline-block;
-	font-size: 13px;
+	font-size: 16px;
 	color: #EEE;
 }
 
-ul.tick li input[type="checkbox"]+label span:first-child {
+ul.agileinfotickwthree li input[type="checkbox"]+label span:first-child
+	{
 	width: 17px;
 	height: 17px;
 	display: inline-block;
-	border: 1px solid #EEE;
+	border: 2px solid #EEE;
 	position: absolute;
-	top: -3px;
+	top: -1px;
 	left: 0;
 	bottom: 4px;
 }
 
-ul.tick li input[type="checkbox"]:checked+label span:first-child:before
+ul.agileinfotickwthree li input[type="checkbox"]:checked+label span:first-child:before
 	{
 	content: "";
 	background: url(../images/tick.png) no-repeat;
@@ -230,355 +222,280 @@ ul.tick li input[type="checkbox"]:checked+label span:first-child:before
 	height: 10px;
 }
 
-.social-icons {
-	margin-top: 20px;
-	text-align: center;
-}
-
-.social-icons p {
-	color: #CCC;
-	margin-bottom: 15px;
-}
-
-.social-icons ul li {
-	float: left;
-	width: 32.9%;
-}
-
-li.twt {
-	margin: 0 2px;
-}
-
-input[type="text"], input[type="password"] {
-	width: 93.4%;
-	margin-bottom: 20px;
-	padding: 10px;
-	float: left;
-	background-color: transparent;
-	border: none;
-	font-size: 15px;
-	border-bottom: 1px solid rgba(238, 238, 238, 0.41);
-	outline: none;
-	color: #FFF;
-}
-
-.send-button {
-	margin-bottom: 20px;
-}
-
-.send-button input[type="submit"] {
-	width: 60%;
-	padding: 10px 0;
+input[type="submit"] {
 	font-size: 16px;
-	font-weight: 100;
-	background-color: transparent;
-	color: #CCC;
-	border: 1px solid rgba(238, 238, 238, 0.41);
-	border-width: thin;
-	cursor: pointer;
+	font-weight: 700;
+	padding: 15px 50px;
+	background-color: #173148;
+	color: #FFF;
+	border: none;
+	border-radius: 5px;
 	outline: none;
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-ms-transition: 0.5s all;
-	text-decoration: none;
-}
-
-/*--w3layouts--*/
-/*--agileits--*/
-.send-button input[type="submit"]:hover {
-	background-color: #000;
-	border: 1px solid #FFF;
-	color: #FFF;
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-ms-transition: 0.5s all;
-	text-decoration: none;
-}
-
-.login a {
-	color: #CCC;
-}
-
-.login a:hover {
-	color: #FFF;
-}
-
-.register {
-	width: 44%;
 	float: left;
-	border-left: 1px solid #DDD;
-	padding-left: 40px;
-	text-align: left;
+	cursor: pointer;
 }
 
-.register p {
-	color: #CCC;
-	margin-bottom: 10px;
+input[type="submit"]:hover {
+	background-color: #FFF;
+	color: #173148;
 }
 
-.register p a {
-	color: #CCC;
+.submit-button p {
+	text-align: right;
+	padding-top: 15px;
 }
 
-.register p a:hover {
+.submit-button p a {
+	color: #FFF;
+}
+
+.submit-button p a span {
+	font-size: 18px;
+}
+
+.submit-button p a:hover {
+	color: #FFEB3B;
+}
+
+::-webkit-input-placeholder {
+	color: #FFF;
+}
+
+::-moz-placeholder {
+	color: #FFF;
+}
+
+::-moz-placeholder {
+	color: #FFF;
+}
+
+::-ms-input-placeholder {
 	color: #FFF;
 }
 
 .footer {
-	text-align: center;
-	margin: 100px 20px 20px;
+	margin: 150px 10px 20px;
+}
+
+.footer p{
+ 	margin: 10px 0;
+}
+
+.footer p a {
+	color: #FFF;
 }
 
 .footer p {
-	color: #CCC;
 	line-height: 25px;
-	/*--w3layouts--*/
-	/*--agileits--*/
 }
 
-.footer a {
-	color: #CCC;
-	text-decoration: none;
+.footer p a:hover {
+	color: #FFEB3B;
 }
 
-.footer a:hover {
-	color: #FFF;
+#github-logo {
+  width: 5%; /* Width of new image */
+  height: 5%; /* Height of new image */
 }
 
 /*-- Index-Page-Styling --*/
 
 /*--- Responsive Code ---*/
-@media screen and (max-width: 1920px) {
-	h1 {
-		margin: 100px 0;
-	}
-}
-
-@media screen and (max-width: 1600px) {
-	h1 {
-		margin: 60px 0;
-	}
-}
-
 @media screen and (max-width: 1440px) {
-	.container {
-		width: 53%;
+	.container-agile {
+		width: 30%;
 	}
 }
 
 @media screen and (max-width: 1366px) {
 	h1 {
-		margin: 50px 0;
+		margin: 75px auto;
 	}
-	.container {
-		width: 57%;
+	.footer {
+		margin: 100px 10px 20px;
 	}
-	/*--w3layouts--*/
-	/*--agileits--*/
 }
 
 @media screen and (max-width: 1280px) {
-	.container {
-		width: 60%;
+	.container-agile {
+		width: 35%;
 	}
 }
 
 @media screen and (max-width: 1024px) {
-	.container {
-		width: 76%;
+	h1 {
+		font-size: 45px;
+		margin: 50px auto;
+	}
+	.container-agile {
+		width: 40%;
+	}
+	.footer {
+		margin: 50px 10px 20px;
 	}
 }
 
-@media screen and (max-width: 966px) {
-	.container {
-		width: 80%;
-	}
-	.footer {
-		margin: 50px 20px 20px;
+@media screen and (max-width: 900px) {
+	.container-agile {
+		width: 42%;
 	}
 }
 
 @media screen and (max-width: 853px) {
-	.login {
-		padding-right: 36px;
-	}
-	.register {
-		padding-left: 36px;
-	}
-	.social-icons ul li {
-		width: 32.8%;
-	}
-	.register p {
-		font-size: 14px;
+	.container-agile {
+		width: 45%;
 	}
 }
 
 @media screen and (max-width: 800px) {
-	h1 {
-		font-size: 43px;
-	}
-	.login {
-		padding-right: 35px;
-	}
-	.register {
-		padding-left: 34px;
-	}
-	.social-icons ul li span.icons {
-		width: 28px;
+	.container-agile {
+		width: 48%;
 	}
 }
 
 @media screen and (max-width: 768px) {
-	.container {
-		width: 85%;
-	}
-	.register p {
-		font-size: 13.8px;
+	.container-agile {
+		width: 50%;
 	}
 }
 
 @media screen and (max-width: 736px) {
 	h1 {
 		font-size: 40px;
+		margin: 40px auto;
 	}
-	.container {
-		width: 87%;
-		padding: 35px;
+	.container-agile {
+		width: 51%;
 	}
-	.login {
-		padding-right: 34px;
+	h2 {
+		font-size: 35px;
 	}
-	.register {
-		padding-left: 33px;
-	}
-	.social-icons ul li a span {
+	.submit-button p {
+		padding-top: 13px;
+		float: right;
 		font-size: 14px;
-	}
-	.register p {
-		font-size: 13.2px;
 	}
 }
 
 @media screen and (max-width: 667px) {
+	.container-agile {
+		width: 52%;
+	}
+}
+
+@media screen and (max-width: 640px) {
 	h1 {
-		font-size: 35px;
-		letter-spacing: 3px;
+		margin: 35px auto;
 	}
-	.container {
+	.container-agile {
 		width: 55%;
-		padding: 50px;
-	}
-	.login {
-		padding: 0;
-		width: 100%;
-		margin-bottom: 50px;
-	}
-	.register {
-		padding: 40px 0 0 0;
-		width: 100%;
-		border: none;
-		border-top: 1px solid #DDD;
 	}
 }
 
 @media screen and (max-width: 603px) {
-	h1 {
-		letter-spacing: 2px;
+	.container-agile {
+		width: 56%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.container-agile {
+		width: 60%;
 	}
 }
 
 @media screen and (max-width: 568px) {
 	h1 {
-		letter-spacing: 1px;
-		margin: 30px 0;
-	}
-	.container {
-		width: 60%;
-		padding: 40px;
-	}
-}
-
-@media screen and (max-width: 533px) {
-	h1 {
-		font-size: 32px;
-	}
-}
-
-@media screen and (max-width: 480px) {
-	.container {
-		width: 70%;
-		padding: 35px;
-	}
-	.send-button input[type="submit"] {
-		width: 50%;
-		padding: 8px 0;
-	}
-}
-
-@media screen and (max-width: 414px) {
-	h1 {
-		font-size: 30px;
-	}
-	.container {
-		width: 75%;
-		padding: 25px;
-	}
-	.login {
-		margin-bottom: 30px;
+		font-size: 35px;
+		margin: 25px auto;
 	}
 	h2 {
 		font-size: 30px;
+	}
+	input[type="text"], input[type="password"] {
+		width: 79%;
+		padding: 10px 10px 10px 50px;
+		font-size: 13px;
+		border: 1px solid #FFF;
+		border-radius: 4px;
 		margin-bottom: 15px;
 	}
-	.register {
-		padding: 30px 0 0 0;
+	input[type="text"] {
+		background: url("../images/mail.png") no-repeat 13px 8px;
+		background-size: 20px;
+	}
+	input[type="password"] {
+		background: url("../images/password.png") no-repeat 13px 7px;
+		background-size: 20px;
+	}
+	ul.tick {
+		margin-bottom: 20px;
+	}
+	ul.tick li input[type="checkbox"]+label {
+		font-size: 15px;
+	}
+	ul.tick li input[type="checkbox"]+label span:first-child {
+		width: 15px;
+		height: 15px;
+		top: 0;
+		border: 1px solid #EEE;
+	}
+	input[type="submit"] {
+		font-size: 15px;
+		padding: 10px 40px;
+		border-radius: 4px;
 	}
 	.footer p {
 		font-size: 14px;
 	}
 }
 
+@media screen and (max-width: 480px) {
+	.container-agile {
+		width: 65%;
+	}
+	.submit-button {
+		text-align: center;
+	}
+	ul.agileinfotickwthree {
+		padding-left: 0;
+	}
+	input[type="submit"] {
+		float: inherit;
+		width: 100%;
+	}
+	.submit-button p {
+		float: left;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.container-agile {
+		width: 70%;
+	}
+	input[type="text"], input[type="password"] {
+		width: 78%;
+	}
+}
+
 @media screen and (max-width: 384px) {
 	h1 {
-		letter-spacing: 0px;
+		letter-spacing: 0;
 	}
-}
-
-@media screen and (max-width: 375px) {
-	.social-icons ul li span.icons {
-		width: 27px;
-	}
-	.register p {
-		font-size: 13px;
-		line-height: 23px;
-	}
-}
-
-@media screen and (max-width: 360px) {
-	.container {
-		width: 80%;
-		padding: 20px;
+	.container-agile {
+		width: 75%;
 	}
 }
 
 @media screen and (max-width: 320px) {
-	.social-icons ul li {
-		width: 32.7%;
+	h1 {
+		font-size: 32px;
+		font-weight: 500;
 	}
-	.social-icons ul li span.icons {
-		width: 25px;
+	h2 {
+		font-size: 27px;
 	}
-	.social-icons ul li a span {
-		font-size: 12.4px;
+	.container-agile {
+		width: 85%;
 	}
-}
-
-/*--- Responsive Code ---*/
-
-h1, h2, h3, h4, h5 {
-	color: white !important;
 }

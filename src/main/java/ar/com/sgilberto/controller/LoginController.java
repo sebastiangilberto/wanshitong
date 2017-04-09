@@ -21,23 +21,23 @@ public class LoginController {
 	private ILoginService loginService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView home() {
+	public String home() {
 
-		return new ModelAndView("redirect:/login");
+		return "redirect:/login";
 
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView login(Model model, HttpServletRequest request, HttpServletResponse response) {
+	public String login(Model model, HttpServletRequest request, HttpServletResponse response) {
 
 		UsuarioDto usuarioDto = new UsuarioDto();
 		model.addAttribute("UsuarioDto", usuarioDto);
-		return new ModelAndView("login");
+		return "login";
 
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView login(@ModelAttribute UsuarioDto usuario, Model model, HttpServletRequest request,
+	public String login(@ModelAttribute UsuarioDto usuario, Model model, HttpServletRequest request,
 			HttpServletResponse response) {
 
 		boolean userValid = this.loginService.validateUser(usuario);
@@ -46,14 +46,14 @@ public class LoginController {
 
 			System.out.println("Usuario Valido");
 			model.addAttribute("usuario", usuario);
-			return new ModelAndView("index");
+			return "redirect:/catalogo";
 
 		} else {
 
 			System.out.println("Usuario Invalido");
 			model.addAttribute("errorMessage", "Usuario o Password incorrectos");
 			model.addAttribute("UsuarioDto", new UsuarioDto());
-			return new ModelAndView("login");
+			return "login";
 
 		}
 
