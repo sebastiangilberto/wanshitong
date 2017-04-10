@@ -23,7 +23,11 @@ public class LibroDao implements ILibroDao {
 		Session session = this.sessionFactory.openSession();
 
 		Transaction tx = session.beginTransaction();
-		session.persist(libro);
+		session.save(libro);
+
+		session.flush();
+		session.clear();
+
 		tx.commit();
 
 		session.close();
@@ -49,7 +53,7 @@ public class LibroDao implements ILibroDao {
 
 	@Override
 	@Transactional
-	public Libro getById(int id) {
+	public Libro getById(Integer id) {
 		Session session = this.sessionFactory.openSession();
 		Libro libro = (Libro) session.load(Libro.class, new Integer(id));
 		return libro;
@@ -57,15 +61,23 @@ public class LibroDao implements ILibroDao {
 
 	@Transactional
 	@Override
-	public void remove(int id) {
-		Session session = this.sessionFactory.openSession();
-		Libro libro = (Libro) session.load(Libro.class, new Integer(id));
-		if (null != libro) {
-			Transaction tx = session.beginTransaction();
-			session.delete(libro);
-			tx.commit();
+	public void remove(Integer id) {
 
-			session.close();
-		}
+		Session session;
+
+		session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+
+		Libro libro = (Libro) session.load(Libro.class, new Integer(id));
+		session.delete(libro);
+
+		// This makes the pending delete to be done
+		session.flush();
+		session.clear();
+
+		tx.commit();
+
+		session.close();
+
 	}
 }

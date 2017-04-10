@@ -12,8 +12,8 @@ public interface ILibroDao {
 
 	public List<Libro> getAll();
 
-	public Libro getById(int id);
+	public Libro getById(Integer id);
 
-	public void remove(int id);
+	public void remove(Integer id);
 
 }

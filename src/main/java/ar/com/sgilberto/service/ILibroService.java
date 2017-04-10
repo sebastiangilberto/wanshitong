@@ -12,9 +12,9 @@ public interface ILibroService {
 
 	public List<LibroDto> getLibros();
 
-	public LibroDto getLibroById(int id);
+	public LibroDto getLibroById(Integer id);
 
-	public void removeLibro(int id);
+	public void removeLibro(Integer id);
 
 
 }

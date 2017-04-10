@@ -63,7 +63,7 @@ public final class LibroService implements ILibroService {
 
 	@Override
 	@Transactional
-	public LibroDto getLibroById(int id) {
+	public LibroDto getLibroById(Integer id) {
 
 		// obtengo los librosEntitys y los paso a dto
 
@@ -77,7 +77,7 @@ public final class LibroService implements ILibroService {
 
 	@Override
 	@Transactional
-	public void removeLibro(int id) {
+	public void removeLibro(Integer id) {
 		this.libroDao.remove(id);
 	}
 }
