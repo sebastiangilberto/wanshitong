@@ -31,28 +31,25 @@
 		cache-period="31556926" />
 
 	<mvc:annotation-driven />
-	<tx:annotation-driven /> 
+	<tx:annotation-driven transaction-manager="txManager" />
 
 	<!-- Desarrollo -->
-	 <!--
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+		<property name="driverClassName" value="org.postgresql.Driver" /> <property 
+		name="url" value="jdbc:postgresql://127.0.0.1:5432/wanshitong" /> <property 
+		name="username" value="wanshitong" /> <property name="password" value="wanshitong" 
+		/> </bean> -->
+	<!-- Producción -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.postgresql.Driver" />
-		<property name="url" value="jdbc:postgresql://127.0.0.1:5432/wanshitong" />
-		<property name="username" value="wanshitong" />
-		<property name="password" value="wanshitong" />
+		<property name="url"
+			value="jdbc:postgresql://ec2-23-23-227-188.compute-1.amazonaws.com:5432/d99q0dbltbnhdd" />
+		<property name="username" value="izpnmositpvlvf" />
+		<property name="password"
+			value="646c7218fd3530808dad90f9b2745c4f5892a5073f4ce2562f7e9c2debf62b2d" />
 	</bean>
-	 -->
-	<!-- Producción -->
-	
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-	    <property name="driverClassName" value="org.postgresql.Driver" />
-	    <property name="url" value="jdbc:postgresql://ec2-23-23-227-188.compute-1.amazonaws.com:5432/d99q0dbltbnhdd" />
-	    <property name="username" value="izpnmositpvlvf" />
-	    <property name="password" value="646c7218fd3530808dad90f9b2745c4f5892a5073f4ce2562f7e9c2debf62b2d" />
-	</bean>
- 	
- 
+
 	<!-- Hibernate 3 Annotation SessionFactory Bean definition -->
 	<bean id="hibernate3AnnotatedSessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
@@ -63,8 +60,15 @@
 				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
 				<prop key="hibernate.current_session_context_class">thread</prop>
 				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.connection.autocommit">true</prop> 
+				<prop key="hibernate.connection.autocommit">true</prop>
 			</props>
+		</property>
+	</bean>
+
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="hibernate3AnnotatedSessionFactory" />
 		</property>
 	</bean>
 
