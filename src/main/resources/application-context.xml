@@ -44,9 +44,9 @@
 	<!-- Producción -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 	    <property name="driverClassName" value="org.postgresql.Driver" />
-	    <property name="url" value="jdbc:postgresql://ec2-174-129-41-23.compute-1.amazonaws.com:5432/d66bdpku278dsn?sslmode=disable" />
-	    <property name="username" value="ekmjgslcannfgl" />
-	    <property name="password" value="1d083b4cd26961340f1e0efc88a65622764d06f9e7862d1b8d17ecc9c2861ffb" />
+	    <property name="url" value="jdbc:postgresql://ec2-23-23-227-188.compute-1.amazonaws.com:5432/d99q0dbltbnhdd" />
+	    <property name="username" value="izpnmositpvlvf" />
+	    <property name="password" value="646c7218fd3530808dad90f9b2745c4f5892a5073f4ce2562f7e9c2debf62b2d" />
 	</bean>
  
 	<!-- Hibernate 3 Annotation SessionFactory Bean definition -->
