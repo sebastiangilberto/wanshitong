@@ -5,7 +5,7 @@ catalogo.service = (function() {
 	function agregarLibro() {
 
 		$.ajax({
-			url : '/wanshitong/catalogo/agregarLibro/',
+			url : '/wanshitong/catalogo/agregarLibro',
 			data : $('#formAgregarLibro').serialize(),
 			dataType : "json",
 			method : "POST"
@@ -23,8 +23,14 @@ catalogo.service = (function() {
 
 	function eliminarLibro(id) {
 
+		var data = {
+            id: id
+        }
+		
 		$.ajax({
-			url : '/wanshitong/catalogo/eliminarLibro/' + id,
+			url : '/wanshitong/catalogo/eliminarLibro',
+			data : data,
+			dataType : "json",
 			method : "POST"
 		}).done(function(data) {
 			$('#modalConfirmacion').modal("toggle");
