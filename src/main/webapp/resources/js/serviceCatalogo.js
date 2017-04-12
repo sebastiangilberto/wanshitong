@@ -5,7 +5,7 @@ catalogo.service = (function() {
 	function agregarLibro() {
 
 		$.ajax({
-			url : '/catalogo/agregarLibro',
+			url : wanshitong.service.getContextPath() + '/catalogo/agregarLibro',
 			data : $('#formAgregarLibro').serialize(),
 			dataType : "json",
 			method : "POST"
@@ -27,10 +27,8 @@ catalogo.service = (function() {
 			id : id
 		}
 
-		var requestContextPath = this.getContextPath();
-
 		$.ajax({
-			url : requestContextPath + "/catalogo/eliminarLibro",
+			url : wanshitong.service.getContextPath() + "/catalogo/eliminarLibro",
 			data : data,
 			dataType : "json",
 			method : "POST"
@@ -46,14 +44,8 @@ catalogo.service = (function() {
 
 	}
 
-	function getContextPath() {
-		return window.location.pathname.substring(0, window.location.pathname
-				.indexOf("/", 2));
-	}
-
 	return {
 		agregarLibro : agregarLibro,
-		eliminarLibro : eliminarLibro,
-		getContextPath : getContextPath
+		eliminarLibro : eliminarLibro
 	};
 })();
