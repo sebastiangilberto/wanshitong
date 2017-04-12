@@ -34,7 +34,7 @@ public class LoginDaoImpl implements LoginDao {
 
 		System.out.println("Usuario  ----> " + usuario.getUsername());
 		System.out.println("Password ----> " + usuario.getPassword());
-		
+
 		List result = criteria.list();
 
 		return !result.isEmpty();

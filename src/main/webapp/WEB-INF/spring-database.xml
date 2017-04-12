@@ -12,42 +12,28 @@
        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
        http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-	<context:component-scan base-package="ar.com.sgilberto.*" />
 
-	<!-- Configuración de MVC -->
-
-	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/jsp/" />
-		<property name="suffix" value=".jsp" />
-	</bean>
-
-	<bean id="messageSource"
-		class="org.springframework.context.support.ResourceBundleMessageSource">
-		<property name="basename" value="messages" />
-	</bean>
-
-	<mvc:resources location="/resources/" mapping="/resources/**"
-		cache-period="31556926" />
-
-	<mvc:annotation-driven />
-	<tx:annotation-driven transaction-manager="txManager" />
-
-	<!-- Desarrollo -->
 	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
 		<property name="driverClassName" value="org.postgresql.Driver" /> <property 
 		name="url" value="jdbc:postgresql://127.0.0.1:5432/wanshitong" /> <property 
 		name="username" value="wanshitong" /> <property name="password" value="wanshitong" 
 		/> </bean> -->
 	<!-- Producción -->
+	<!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+		<property name="driverClassName" value="org.postgresql.Driver" /> <property 
+		name="url" value="jdbc:postgresql://ec2-23-23-227-188.compute-1.amazonaws.com:5432/d99q0dbltbnhdd" 
+		/> <property name="username" value="izpnmositpvlvf" /> <property name="password" 
+		value="646c7218fd3530808dad90f9b2745c4f5892a5073f4ce2562f7e9c2debf62b2d" 
+		/> </bean> -->
+
+	<!-- Desarrollo -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
 		<property name="driverClassName" value="org.postgresql.Driver" />
-		<property name="url"
-			value="jdbc:postgresql://ec2-23-23-227-188.compute-1.amazonaws.com:5432/d99q0dbltbnhdd" />
-		<property name="username" value="izpnmositpvlvf" />
-		<property name="password"
-			value="646c7218fd3530808dad90f9b2745c4f5892a5073f4ce2562f7e9c2debf62b2d" />
+		<property name="url" value="jdbc:postgresql://127.0.0.1:5432/wanshitong" />
+		<property name="username" value="wanshitong" />
+		<property name="password" value="wanshitong" />
 	</bean>
 
 	<!-- Hibernate 3 Annotation SessionFactory Bean definition -->
@@ -65,16 +51,9 @@
 		</property>
 	</bean>
 
-	<bean id="txManager"
-		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-		<property name="sessionFactory">
-			<ref local="hibernate3AnnotatedSessionFactory" />
-		</property>
-	</bean>
-
-	<bean
-		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"></bean>
-	<bean
-		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"></bean>
-
+	<!-- <tx:annotation-driven transaction-manager="txManager" /> <bean id="txManager" 
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager"> <property 
+		name="sessionFactory"> <ref local="hibernate3AnnotatedSessionFactory" /> 
+		</property> </bean> <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"></bean> 
+		<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"></bean> -->
 </beans>

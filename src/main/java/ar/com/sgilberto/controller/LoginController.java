@@ -1,61 +1,54 @@
 package ar.com.sgilberto.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
-import ar.com.sgilberto.model.UsuarioDto;
-import ar.com.sgilberto.service.LoginService;
 
 @Controller
 public class LoginController {
 
-	@Autowired
-	private LoginService loginService;
-
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home() {
-
-		return "redirect:/login";
-
-	}
-
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(Model model, HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView login(@RequestParam(value = "error", required = false) String error,
+			@RequestParam(value = "logout", required = false) String logout) {
 
-		UsuarioDto usuarioDto = new UsuarioDto();
-		model.addAttribute("UsuarioDto", usuarioDto);
-		return "login";
+		ModelAndView model = new ModelAndView();
+		if (error != null) {
+			model.addObject("error", "Invalid username and password!");
+		}
+
+		if (logout != null) {
+			model.addObject("msg", "You've been logged out successfully.");
+		}
+		model.setViewName("login");
+
+		return model;
 
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(@ModelAttribute UsuarioDto usuario, Model model, HttpServletRequest request,
-			HttpServletResponse response) {
+	// for 403 access denied page
+	@RequestMapping(value = "/403", method = RequestMethod.GET)
+	public ModelAndView accesssDenied() {
 
-		boolean userValid = this.loginService.validateUser(usuario);
+		ModelAndView model = new ModelAndView();
 
-		if (userValid) {
+		// check if user is login
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if (!(auth instanceof AnonymousAuthenticationToken)) {
+			UserDetails userDetail = (UserDetails) auth.getPrincipal();
+			System.out.println(userDetail);
 
-			System.out.println("Usuario Valido");
-			model.addAttribute("usuario", usuario);
-			return "redirect:/catalogo";
-
-		} else {
-
-			System.out.println("Usuario Invalido");
-			model.addAttribute("errorMessage", "Usuario o Password incorrectos");
-			model.addAttribute("UsuarioDto", new UsuarioDto());
-			return "login";
+			model.addObject("username", userDetail.getUsername());
 
 		}
+
+		model.setViewName("403");
+		return model;
 
 	}
 

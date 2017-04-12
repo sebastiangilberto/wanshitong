@@ -21,12 +21,12 @@ public final class LibroServiceImpl implements LibroService {
 	@Transactional
 	public void addLibro(LibroDto libro) {
 		Libro libroEntity = new Libro();
-		
+
 		libroEntity.setAutor(libro.getAutor());
 		libroEntity.setTitulo(libro.getTitulo());
 		libroEntity.setGenero(libro.getGenero());
 		libroEntity.setTapa(libro.getTapa());
-		
+
 		this.libroDao.save(libroEntity);
 	}
 
