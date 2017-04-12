@@ -36,6 +36,8 @@ public class LibroDao implements ILibroDao {
 		Session session=this.sessionFactory.getCurrentSession();
 		Transaction trans = session.beginTransaction();
 		session.save(libro);
+		session.flush();
+		session.clear();
 		trans.commit();
 		
 	}

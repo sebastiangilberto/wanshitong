@@ -14,7 +14,7 @@
 
 <!-- Body -->
 <body>
-	<h1>SLEEK LOGIN FORM</h1>
+	<h1>WANSHITONG</h1>
 	<h2>Log in to your Account</h2>
 	<div class="container-agile">
 		<c:if test="${not empty errorMessage}">
