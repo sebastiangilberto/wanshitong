@@ -1,6 +1,5 @@
 package ar.com.sgilberto.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +26,7 @@ public class CatalogoController {
 
 		model.addAttribute("LibroDto", new LibroDto());
 
-		List<LibroDto> libros = new ArrayList<LibroDto>();
-		libros = this.getLibros();
+		List<LibroDto> libros = this.libroService.getLibros();
 
 		model.addAttribute("libros", libros);
 
@@ -37,27 +35,6 @@ public class CatalogoController {
 		}
 
 		return new ModelAndView("catalogo");
-	}
-
-	@RequestMapping(value = "/banana", method = RequestMethod.GET)
-	public ModelAndView adminLibros() {
-
-		ModelAndView model = new ModelAndView();
-		model.addObject("title", "Spring Security Login Form - Database Authentication");
-		model.addObject("message", "This page is for ROLE_ADMIN only!");
-		model.setViewName("admin");
-
-		return model;
-
-	}
-
-	// obtener todos los libros de la base
-	private List<LibroDto> getLibros() {
-
-		List<LibroDto> libros = this.libroService.getLibros();
-
-		return libros;
-
 	}
 
 }

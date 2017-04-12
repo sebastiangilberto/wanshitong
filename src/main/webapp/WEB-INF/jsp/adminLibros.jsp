@@ -37,6 +37,11 @@
 			<div class="messages-list span12"></div>
 		</div>
 
+		<div class="row">
+			<button type="button" class="btn btn-primary btn-lg"
+				id="btnAgregarLibro">Add Book</button>
+		</div>
+
 		<!-- Catalogo -->
 		<div class="row">
 			<div id="movies_catalog">
@@ -52,6 +57,7 @@
 										<td class="text-left" width="*">Autor</td>
 										<td class="text-left" width="*">Genero</td>
 										<td class="text-left" width="5%">&nbsp;</td>
+										<td class="text-left" width="5%">&nbsp;</td>
 									</tr>
 								</thead>
 
@@ -61,6 +67,10 @@
 											<td><c:out value="${libro.titulo}" /></td>
 											<td><c:out value="${libro.autor}" /></td>
 											<td><c:out value="${libro.genero}" /></td>
+											<td width="5%">
+												<button class="btn btn-danger text-center btnEliminarLibro"
+													type="button">X</button>
+											</td>
 											<td><button type="button" class="btn btn-info"
 													onclick="detalleLibro(${status.index});">
 													<span class="glyphicon glyphicon-search"></span>
@@ -75,6 +85,12 @@
 				</div>
 			</div>
 		</div>
+
+		<!-- Modal Add Book -->
+		<%@include file="modalAgregarLibro.jsp"%>
+
+		<!-- Modal Add Book -->
+		<%@include file="modalConfirmacion.jsp"%>
 
 	</div>
 </body>

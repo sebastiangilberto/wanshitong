@@ -1,5 +1,7 @@
 package ar.com.sgilberto.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +26,7 @@ public class AdminController {
 	@Autowired
 	private LibroService libroService;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView adminPage() {
 
 		ModelAndView model = new ModelAndView();
@@ -40,10 +42,16 @@ public class AdminController {
 	public ModelAndView adminLibros() {
 
 		ModelAndView model = new ModelAndView();
-		model.addObject("title", "Spring Security Login Form - Database Authentication");
-		model.addObject("message", "This page is for ROLE_ADMIN only!");
-		model.setViewName("admin");
+		
+		List<LibroDto> libros = this.libroService.getLibros();
 
+		if (libros.size() < 0) {
+			model.addObject("errorMessage", "No se encontraron resultados");
+		}
+
+		model.addObject("libros", libros);
+		model.setViewName("adminLibros");
+			
 		return model;
 
 	}

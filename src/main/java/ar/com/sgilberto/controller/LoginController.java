@@ -31,13 +31,22 @@ public class LoginController {
 
 	}
 
-	// for 403 access denied page
+	@RequestMapping(value = "/loginSuccess", method = RequestMethod.GET)
+	public ModelAndView defaultPage() {
+
+		ModelAndView model = new ModelAndView();
+		model.addObject("title", "Spring Security Login Form - Database Authentication");
+		model.addObject("message", "This is default page!");
+		model.setViewName("home");
+		return model;
+
+	}
+
 	@RequestMapping(value = "/403", method = RequestMethod.GET)
 	public ModelAndView accesssDenied() {
 
 		ModelAndView model = new ModelAndView();
 
-		// check if user is login
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if (!(auth instanceof AnonymousAuthenticationToken)) {
 			UserDetails userDetail = (UserDetails) auth.getPrincipal();

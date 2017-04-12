@@ -14,7 +14,7 @@
 		<access-denied-handler error-page="/403" />
 		<form-login 
 		    login-page="/login" 
-		    default-target-url="/welcome" 
+		    default-target-url="/loginSuccess" 
 			authentication-failure-url="/login?error" 
 			username-parameter="username"
 			password-parameter="password" />
@@ -28,7 +28,7 @@
 		<authentication-provider>
 			<jdbc-user-service data-source-ref="dataSource"
 				users-by-username-query=
-					"select username,password, enabled from seguridad.user where username=?"
+					"select username,password, enabled from seguridad.users where username=?"
 				authorities-by-username-query=
 					"select username, role from seguridad.user_roles where username =?  " />
 		</authentication-provider>
