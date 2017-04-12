@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.com.sgilberto.model.UsuarioDto;
-import ar.com.sgilberto.service.ILoginService;
+import ar.com.sgilberto.service.LoginService;
 
 @Controller
 public class LoginController {
 
 	@Autowired
-	private ILoginService loginService;
+	private LoginService loginService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {

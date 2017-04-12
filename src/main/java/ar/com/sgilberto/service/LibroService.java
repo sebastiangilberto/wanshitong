@@ -1,83 +1,20 @@
 package ar.com.sgilberto.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import ar.com.sgilberto.dao.ILibroDao;
-import ar.com.sgilberto.entity.Libro;
 import ar.com.sgilberto.model.LibroDto;
 
-@Service
-public final class LibroService implements ILibroService {
+public interface LibroService {
 
-	@Autowired
-	private ILibroDao libroDao;
+	public void addLibro(LibroDto libro);
 
-	@Override
-	@Transactional
-	public void addLibro(LibroDto libro) {
-		Libro libroEntity = new Libro();
-		
-		libroEntity.setAutor(libro.getAutor());
-		libroEntity.setTitulo(libro.getTitulo());
-		libroEntity.setGenero(libro.getGenero());
-		libroEntity.setTapa(libro.getTapa());
-		
-		this.libroDao.save(libroEntity);
-	}
+	public void updateLibro(LibroDto libro);
 
-	@Override
-	@Transactional
-	public void updateLibro(LibroDto libro) {
-		Libro libroEntity = new Libro();
-		// seteo valores del entity basados en el dto
-		this.libroDao.update(libroEntity);
-	}
+	public List<LibroDto> getLibros();
 
-	@Override
-	@Transactional
-	public List<LibroDto> getLibros() {
+	public LibroDto getLibroById(Integer id);
 
-		// obtengo los librosEntitys y los paso a dto
+	public void removeLibro(Integer id);
 
-		List<LibroDto> result = new ArrayList<LibroDto>();
-		List<Libro> listLibros = this.libroDao.getAll();
 
-		for (Libro item : listLibros) {
-			LibroDto libro = new LibroDto();
-			libro.setId(item.getId());
-			libro.setAutor(item.getAutor());
-			libro.setTitulo(item.getTitulo());
-			libro.setGenero(item.getGenero());
-			libro.setTapa(item.getTapa());
-
-			result.add(libro);
-		}
-
-		return result;
-	}
-
-	@Override
-	@Transactional
-	public LibroDto getLibroById(Integer id) {
-
-		// obtengo los librosEntitys y los paso a dto
-
-		// LibroEntity libro = this.libroDao.getLibroById(id);
-
-		LibroDto result = new LibroDto();
-
-		return result;
-
-	}
-
-	@Override
-	@Transactional
-	public void removeLibro(Integer id) {
-		this.libroDao.remove(id);
-	}
 }

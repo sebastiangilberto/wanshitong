@@ -20,14 +20,14 @@ import org.springframework.web.servlet.ModelAndView;
 import ar.com.sgilberto.enumerator.TrxStatus;
 import ar.com.sgilberto.model.LibroDto;
 import ar.com.sgilberto.model.RespuestaJSON;
-import ar.com.sgilberto.service.ILibroService;
+import ar.com.sgilberto.service.LibroService;
 
 @Controller
 @RequestMapping("catalogo")
 public class CatalogoController {
 
 	@Autowired
-	private ILibroService libroService;
+	private LibroService libroService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
