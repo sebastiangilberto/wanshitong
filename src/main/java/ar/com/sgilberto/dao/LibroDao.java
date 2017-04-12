@@ -20,6 +20,7 @@ public class LibroDao implements ILibroDao {
 	@Override
 	@Transactional
 	public void save(Libro libro) {
+		/*
 		Session session = this.sessionFactory.openSession();
 
 		Transaction tx = session.beginTransaction();
@@ -31,6 +32,11 @@ public class LibroDao implements ILibroDao {
 		tx.commit();
 
 		session.close();
+		*/
+		Session session=this.sessionFactory.getCurrentSession();
+		Transaction trans = session.beginTransaction();
+		session.save(libro);
+		trans.commit();
 		
 	}
 
@@ -63,6 +69,13 @@ public class LibroDao implements ILibroDao {
 	@Override
 	public void remove(Integer id) {
 
+		
+		Session session=this.sessionFactory.getCurrentSession();
+		Transaction trans = session.beginTransaction();
+		Libro libro = (Libro) session.load(Libro.class, new Integer(id));
+		session.delete(libro);
+		trans.commit();
+		/*
 		Session session;
 
 		session = sessionFactory.openSession();
@@ -78,6 +91,7 @@ public class LibroDao implements ILibroDao {
 		tx.commit();
 
 		session.close();
+		*/
 
 	}
 }
