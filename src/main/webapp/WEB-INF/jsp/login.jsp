@@ -1,78 +1,49 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@page session="true"%>
-<html>
-<head>
-<title>Login Page</title>
-<style>
-.error {
-	padding: 15px;
-	margin-bottom: 20px;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	color: #a94442;
-	background-color: #f2dede;
-	border-color: #ebccd1;
-}
 
-.msg {
-	padding: 15px;
-	margin-bottom: 20px;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	color: #31708f;
-	background-color: #d9edf7;
-	border-color: #bce8f1;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-#login-box {
-	width: 300px;
-	padding: 20px;
-	margin: 100px auto;
-	background: #fff;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border: 1px solid #000;
-}
-</style>
-</head>
-<body onload='document.loginForm.username.focus();'>
+<!-- Header -->
+<jsp:include page="fragments/header.jsp" />
 
-	<h1>Spring Security Login Form (Database Authentication)</h1>
+<!-- Javascript & Css Login -->
+<link rel="stylesheet" href="resources/css/login.css" type="text/css"
+	media="all">
+<script src="resources/js/login.js"></script>
 
-	<div id="login-box">
-
-		<h3>Login with Username and Password</h3>
-
-		<c:if test="${not empty error}">
-			<div class="error">${error}</div>
+<!-- Body -->
+<body>
+	<h1>WANSHITONG</h1>
+	<h2>Log in to your Account</h2>
+	<div class="container-agile">
+		<c:if test="${not empty errorMessage}">
+			<div class="alert alert-danger" role="alert">
+				<c:out value="${errorMessage}" />
+			</div>
 		</c:if>
-		<c:if test="${not empty msg}">
-			<div class="msg">${msg}</div>
-		</c:if>
-
-		<form name='loginForm'
-			action="<c:url value='/j_spring_security_check' />" method='POST'>
-
-			<table>
-				<tr>
-					<td>User:</td>
-					<td><input type='text' name='username'></td>
-				</tr>
-				<tr>
-					<td>Password:</td>
-					<td><input type='password' name='password' /></td>
-				</tr>
-				<tr>
-					<td colspan='2'><input name="submit" type="submit"
-						value="submit" /></td>
-				</tr>
-			</table>
-
-			<input type="hidden" name="${_csrf.parameterName}"
-				value="${_csrf.token}" />
-
-		</form>
+		<form:form id="loginForm" method="POST"
+			action="${pageContext.request.contextPath}/login"
+			commandName="UsuarioDto">
+			<form:input id="usernameLogin" path="username" placeholder="Username"
+				required="required" />
+			<form:password id="passwordLogin" path="password"
+				placeholder="Password" required="required" />
+			<ul class="agileinfotickwthree">
+				<li><input type="checkbox" id="brand1" value=""> <label
+					for="brand1"><span></span>Remember me</label></li>
+			</ul>
+			<div class="submit-button">
+				<input type="submit" value="LOGIN">
+				<p>
+					<a href="#">REGISTER NEW ACCOUNT</a>
+				</p>
+				<div class="clear"></div>
+			</div>
+		</form:form>
 	</div>
 
+	<jsp:include page="fragments/footer.jsp" />
 </body>
+
 </html>

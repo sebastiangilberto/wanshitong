@@ -7,8 +7,13 @@ wanshitong.service = (function() {
 				.indexOf("/", 2));
 	}
 
+	function logout() {
+		document.getElementById("logoutForm").submit();
+	}
+
 	return {
-		getContextPath : getContextPath
+		getContextPath : getContextPath,
+		logout : logout
 	}
 
 })();

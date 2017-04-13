@@ -34,7 +34,7 @@ public class CatalogoController {
 			model.addAttribute("errorMessage", "No se encontraron resultados");
 		}
 
-		return new ModelAndView("catalogo");
+		return new ModelAndView("catalogoUser");
 	}
 
 }

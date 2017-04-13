@@ -10,12 +10,12 @@
 <jsp:include page="fragments/header.jsp" />
 
 <!-- Javascript -->
-<link rel="stylesheet" href="resources/css/catalogo.css" type="text/css"
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/catalogo.css" type="text/css"
 	media="all">
 <script src="https://api.filestackapi.com/filestack.js"></script>
-<script src="resources/js/alertUtils.js"></script>
-<script src="resources/js/catalogo.js"></script>
-<script src="resources/js/serviceCatalogo.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/alertUtils.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/catalogo.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/serviceCatalogo.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css"
 	type="text/css" media="all">

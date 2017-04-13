@@ -26,7 +26,7 @@ CREATE SEQUENCE seguridad.user_id_seq
 INCREMENT BY 1
 MINVALUE 1
 MAXVALUE 9223372036854775807
-START 2;
+START 1;
 
 -- CREATE SEQUENCE FOR ROLES
 
@@ -34,7 +34,7 @@ CREATE SEQUENCE seguridad.user_role_id_seq
 INCREMENT BY 1
 MINVALUE 1
 MAXVALUE 9223372036854775807
-START 3;
+START 1;
 
 
 -- CREATE TABLE USERS
@@ -69,9 +69,9 @@ WITH (
 
 -- DATA FOR USERS
 
-INSERT INTO seguridad.users (id,username,password,email,enabled) VALUES (
+INSERT INTO seguridad.users (id,username,password,enabled) VALUES (
 1,'sgilberto','Snalgo1608',true);
-INSERT INTO seguridad.users (id,username,password,email,enabled) VALUES (
+INSERT INTO seguridad.users (id,username,password,enabled) VALUES (
 2,'prueba','asdqwe123',true);
 
 -- DATA FOR ROLES
@@ -86,9 +86,9 @@ INSERT INTO seguridad.user_roles (user_role_id,username,role) VALUES (
 -- DATA FOR LIBROS
 
 INSERT INTO public.libros (id,titulo,autor,genero,tapa) VALUES (
-2,'Estudio en escarlata','Arthur Conan Doyle','Suspenso','https://4.bp.blogspot.com/-znVu7EAogNo/VHSDaVbfLCI/AAAAAAAAJuo/dKJRUxxRuGA/s1600/Estudio%2Ben%2Bescarlata1.png');
-INSERT INTO public.libros (id,titulo,autor,genero,tapa) VALUES (
 1,'18 segundos','George Shuman','Suspenso','https://s-media-cache-ak0.pinimg.com/236x/33/d3/ca/33d3ca2406ec6355326f6a23c7b2178a.jpg');
+INSERT INTO public.libros (id,titulo,autor,genero,tapa) VALUES (
+2,'Estudio en escarlata','Arthur Conan Doyle','Suspenso','https://4.bp.blogspot.com/-znVu7EAogNo/VHSDaVbfLCI/AAAAAAAAJuo/dKJRUxxRuGA/s1600/Estudio%2Ben%2Bescarlata1.png');
 INSERT INTO public.libros (id,titulo,autor,genero,tapa) VALUES (
 3,'El viejo y el mar','Ernest Hemingway','Literatura Universal','http://2.bp.blogspot.com/_c5qMl3yzEAM/TU-XaFPf1rI/AAAAAAAADMc/mbs5TMOrZZc/s1600/El%2Bviejo%2By%2Bel%2Bmar01.jpg');
 INSERT INTO public.libros (id,titulo,autor,genero,tapa) VALUES (
@@ -98,9 +98,5 @@ INSERT INTO public.libros (id,titulo,autor,genero,tapa) VALUES (
 INSERT INTO public.libros (id,titulo,autor,genero,tapa) VALUES (
 6,'Personas desconocidas','John Katzenbach','Suspenso','https://assets-production-webvanta-com.s3-us-west-2.amazonaws.com/000000/50/16/medium/portadas/PersonasDesconocidas.JPG');
 INSERT INTO public.libros (id,titulo,autor,genero,tapa) VALUES (
-15,'El jugador','Fiódor Dostoyevski','Literatura Universal','https://www.filepicker.io/api/file/HPFRl3saTBu68dYDZ3e4');
-INSERT INTO public.libros (id,titulo,autor,genero,tapa) VALUES (
-34,'popo','papa','pipi','');
-INSERT INTO public.libros (id,titulo,autor,genero,tapa) VALUES (
-37,'psaodpasond','idonfiun','ioweqnowiqnewq','');
+7,'El jugador','Fiódor Dostoyevski','Literatura Universal','https://www.filepicker.io/api/file/HPFRl3saTBu68dYDZ3e4');
 

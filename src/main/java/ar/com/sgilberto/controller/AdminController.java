@@ -50,7 +50,7 @@ public class AdminController {
 		}
 
 		model.addObject("libros", libros);
-		model.setViewName("adminLibros");
+		model.setViewName("catalogoAdmin");
 			
 		return model;
 

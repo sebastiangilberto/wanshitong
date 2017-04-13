@@ -10,12 +10,12 @@
 <jsp:include page="fragments/header.jsp" />
 
 <!-- Javascript -->
-<link rel="stylesheet" href="resources/css/catalogo.css" type="text/css"
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin.css" type="text/css"
 	media="all">
 <script src="https://api.filestackapi.com/filestack.js"></script>
-<script src="resources/js/alertUtils.js"></script>
-<script src="resources/js/catalogo.js"></script>
-<script src="resources/js/serviceCatalogo.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/alertUtils.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/admin.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/serviceAdmin.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css"
 	type="text/css" media="all">
@@ -57,7 +57,6 @@
 										<td class="text-left" width="*">Autor</td>
 										<td class="text-left" width="*">Genero</td>
 										<td class="text-left" width="5%">&nbsp;</td>
-										<td class="text-left" width="5%">&nbsp;</td>
 									</tr>
 								</thead>
 
@@ -71,10 +70,6 @@
 												<button class="btn btn-danger text-center btnEliminarLibro"
 													type="button">X</button>
 											</td>
-											<td><button type="button" class="btn btn-info"
-													onclick="detalleLibro(${status.index});">
-													<span class="glyphicon glyphicon-search"></span>
-												</button></td>
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -87,12 +82,11 @@
 		</div>
 
 		<!-- Modal Add Book -->
-		<%@include file="modalAgregarLibro.jsp"%>
+		<jsp:include page="modalAgregarLibro.jsp"></jsp:include>
 
 		<!-- Modal Add Book -->
-		<%@include file="modalConfirmacion.jsp"%>
+		<jsp:include page="modalConfirmacion.jsp"></jsp:include>
 
 	</div>
 </body>
-
 </html>

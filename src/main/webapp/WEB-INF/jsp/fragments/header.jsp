@@ -8,20 +8,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <!-- Icons -->
-<link rel="shortcut icon" href="resources/ico/favicon.ico"
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/ico/favicon.ico"
 	type="image/x-icon" />
 
 <!-- Css -->
-<spring:url value="/resources/css/wanshitong.css" var="wanshitongCss" />
-<spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss" />
+<spring:url value="/resources/css/wanshitong.css"
+	var="wanshitongCss" />
+<spring:url value="/resources/css/bootstrap.min.css"
+	var="bootstrapCss" />
 
 <link href="${wanshitongCss}" rel="stylesheet" />
 <link href="${bootstrapCss}" rel="stylesheet" />
 
 <!-- Javascript -->
-<spring:url value="/resources/js/jquery-3.1.1.min.js" var="jqueryJs" />
-<spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />
-<spring:url value="/resources/js/wanshitong.js" var="wanshitongJs" />
+<spring:url value="/resources/js/jquery-3.1.1.min.js"
+	var="jqueryJs" />
+<spring:url value="/resources/js/bootstrap.min.js"
+	var="bootstrapJs" />
+<spring:url value="/resources/js/wanshitong.js"
+	var="wanshitongJs" />
 
 <script src="${jqueryJs}"></script>
 <script src="${bootstrapJs}"></script>
