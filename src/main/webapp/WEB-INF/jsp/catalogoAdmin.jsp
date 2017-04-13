@@ -5,7 +5,7 @@
 <c:set var="req" value="${pageContext.request}" />
 <c:set var="url">${req.requestURL}</c:set>
 <c:set var="uri" value="${req.requestURI}" />
-<c:set var="path" value="${pageContext.request.contextPath}"/>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,12 +14,12 @@
 <jsp:include page="fragments/header.jsp" />
 
 <!-- Javascript -->
-<link rel="stylesheet" href="admin.css" type="text/css"
-	media="all">
+<link rel="stylesheet" href="${path}/resources/css/admin.css"
+	type="text/css" media="all">
 <script src="https://api.filestackapi.com/filestack.js"></script>
-<script src="/wanshitong/resources/js/alertUtils.js"></script>
-<script src="admin.js"></script>
-<script src="/wanshitong/resources/js/serviceAdmin.js"></script>
+<script src="${path}/resources/js/alertUtils.js"></script>
+<script src="${path}/resources/js/admin.js"></script>
+<script src="${path}/resources/js/serviceAdmin.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css"
 	type="text/css" media="all">
@@ -31,16 +31,39 @@
 <script
 	src="https://cdn.datatables.net/1.10.13/js/dataTables.material.min.js"></script>
 
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+
+		document.getElementById('labelpath').value = window.location.pathname
+				.substring(0, window.location.pathname.indexOf("/", 2));
+	});
+</script>
+
 <!-- Body -->
 <body>
 
 	<jsp:include page="fragments/menu.jsp"></jsp:include>
 
-	<p>REQ es : <c:out value="${req}"></c:out></p>
-	<p>URL es : <c:out value="${url}"></c:out></p>
-	<p>URI es : <c:out value="${uri}"></c:out></p>
-	<p>PATH es : <c:out value="${path}"></c:out></p>
-	
+	<p>
+		REQ es :
+		<c:out value="${req}"></c:out>
+	</p>
+	<p>
+		URL es :
+		<c:out value="${url}"></c:out>
+	</p>
+	<p>
+		URI es :
+		<c:out value="${uri}"></c:out>
+	</p>
+	<p>
+		PATH es :
+		<c:out value="${path}"></c:out>
+	</p>
+	<p>
+		PATH JS es: <input type="text" id="labelpath"></input>
+	</p>
+
 	<div class="container-fluid main">
 		<div class="row">
 			<div class="messages-list span12"></div>

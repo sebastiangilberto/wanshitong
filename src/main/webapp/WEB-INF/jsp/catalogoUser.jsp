@@ -14,12 +14,12 @@
 <jsp:include page="fragments/header.jsp" />
 
 <!-- Javascript -->
-<link rel="stylesheet" href="resources/css/catalogo.css" type="text/css"
+<link rel="stylesheet" href="${path}/resources/css/catalogo.css" type="text/css"
 	media="all">
 <script src="https://api.filestackapi.com/filestack.js"></script>
-<script src="resources/js/alertUtils.js"></script>
-<script src="resources/js/catalogo.js"></script>
-<script src="resources/js/serviceCatalogo.js"></script>
+<script src="${path}/resources/js/alertUtils.js"></script>
+<script src="${path}/resources/js/catalogo.js"></script>
+<script src="${path}/resources/js/serviceCatalogo.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css"
 	type="text/css" media="all">
@@ -31,6 +31,14 @@
 <script
 	src="https://cdn.datatables.net/1.10.13/js/dataTables.material.min.js"></script>
 
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+
+		document.getElementById('labelpath').value = window.location.pathname
+				.substring(0, window.location.pathname.indexOf("/", 2));
+	});
+</script>
+
 <!-- Body -->
 <body>
 
@@ -40,7 +48,9 @@
 	<p>URL es : <c:out value="${url}"></c:out></p>
 	<p>URI es : <c:out value="${uri}"></c:out></p>
 	<p>PATH es : <c:out value="${path}"></c:out></p>
-	
+		<p>
+		PATH JS es: <input type="text" id="labelpath"></input>
+	</p>
 	
 	<div class="container-fluid main">
 		<div class="row">
