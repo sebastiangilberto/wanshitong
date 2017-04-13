@@ -2,6 +2,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:set var="req" value="${pageContext.request}" />
+<c:set var="url">${req.requestURL}</c:set>
+<c:set var="uri" value="${req.requestURI}" />
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,12 +14,12 @@
 <jsp:include page="fragments/header.jsp" />
 
 <!-- Javascript -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/admin.css" type="text/css"
+<link rel="stylesheet" href="admin.css" type="text/css"
 	media="all">
 <script src="https://api.filestackapi.com/filestack.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/alertUtils.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/admin.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/serviceAdmin.js"></script>
+<script src="/wanshitong/resources/js/alertUtils.js"></script>
+<script src="admin.js"></script>
+<script src="/wanshitong/resources/js/serviceAdmin.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css"
 	type="text/css" media="all">
@@ -32,6 +36,11 @@
 
 	<jsp:include page="fragments/menu.jsp"></jsp:include>
 
+	<p>REQ es : <c:out value="${req}"></c:out></p>
+	<p>URL es : <c:out value="${url}"></c:out></p>
+	<p>URI es : <c:out value="${uri}"></c:out></p>
+	<p>PATH es : <c:out value="${path}"></c:out></p>
+	
 	<div class="container-fluid main">
 		<div class="row">
 			<div class="messages-list span12"></div>
