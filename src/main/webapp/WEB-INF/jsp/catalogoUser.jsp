@@ -3,6 +3,14 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
+<c:set var="url" value="${pageContext.request.requestURL}"/>
+<c:set var="server" value="${pageContext.request.serverName}" />
+<c:set var="localName" value="${pageContext.request.localName}" />
+<c:set var="scheme" value="${pageContext.request.scheme}" />
+<c:set var="servletContextPath" value="${pageContext.servletContext.contextPath}" />
+<c:set var="servletContextName" value="${pageContext.servletContext.servletContextName}" />
+<c:set var="uri" value="${pageContext.request.requestURI}" />
+<c:set var="page" value="${pageContext.page}" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,6 +40,16 @@
 <body>
 
 	<jsp:include page="fragments/menu.jsp"></jsp:include>
+
+	<p>PATH: <c:out value="${path}"></c:out></p>
+	<p>URL: <c:out value="${url}"></c:out></p>
+	<p>SERVER:<c:out value="${server}"></c:out></p>
+	<p>LOCALNAME: <c:out value="${localName}"></c:out></p>
+	<p>SCHEME: <c:out value="${scheme}"></c:out></p>
+	<p>SERVLETCONTEXTPATH: <c:out value="${servletContextPath}"></c:out></p>
+	<p>SERVLETCONTEXTNAME: <c:out value="${servletContextName}"></c:out></p>
+	<p>URI: <c:out value="${uri}"></c:out></p>
+	<p>PAGE: <c:out value="${page}"></c:out></p>
 
 	<div class="container-fluid main">
 		<div class="row">
