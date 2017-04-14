@@ -1,5 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page session="true"%>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,12 +9,12 @@
 <jsp:include page="fragments/header.jsp" />
 
 <!-- Javascript && Css Admin -->
-<link rel="stylesheet" href="resources/css/catalogo.css" type="text/css"
+<link rel="stylesheet" href="${path}/resources/css/catalogo.css" type="text/css"
 	media="all">
 <script src="https://api.filestackapi.com/filestack.js"></script>
-<script src="resources/js/global/alertUtils.js"></script>
-<script src="resources/js/user/catalogo.js"></script>
-<script src="resources/js/user/serviceCatalogo.js"></script>
+<script src="${path}/resources/js/alertUtils.js"></script>
+<script src="${path}/resources/js/catalogo.js"></script>
+<script src="${path}/resources/js/serviceCatalogo.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css"
 	type="text/css" media="all">
