@@ -9,8 +9,12 @@ $(function() {
 });
 
 $(function() {
-	$('#btnAgregarLibro').on('click', function(e) {
+	$('#btnModalAgregarLibro').on('click', function(e) {
 		$('#modalAgregarLibro').modal('show');
+	});
+	
+	$('#btnAgregarLibro').click(function() {
+		admin.service.agregarLibro()
 	});
 
 	$('.btnEliminarLibro').on('click', function(e) {
@@ -21,6 +25,6 @@ $(function() {
 
 	$('#btnEliminarLibro').click(function() {
 		var id = $('#modalConfirmacion').data('id');
-		catalogo.service.eliminarLibro(id);
+		admin.service.eliminarLibro(id);
 	});
 });

@@ -1,3 +1,6 @@
+<%@taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+
 <!-- Modal -->
 <div class="modal fade" id="modalAgregarLibro" role="dialog">
 	<div class="modal-dialog">
@@ -29,8 +32,11 @@
 							data-fp-services="IMAGE_SEARCH,COMPUTER,URL"
 							onchange="console.log(event.fpfile.url)" />
 					</div>
-					<button type="submit" class="btn btn-success btn-block"
-						onclick="catalogo.service.agregarLibro()">
+					<div class="form-group">
+						<sec:csrfInput />
+					</div>
+					<button id="btnAgregarLibro" type="submit"
+						class="btn btn-success btn-block">
 						<span class="glyphicons glyphicons-ok"></span> Confirmar
 					</button>
 				</form>

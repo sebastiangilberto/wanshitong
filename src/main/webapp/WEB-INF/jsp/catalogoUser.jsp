@@ -9,7 +9,7 @@
 <jsp:include page="header.jsp" />
 
 <!-- Javascript -->
-<link rel="stylesheet" href="${path}/resources/css/catalogo.css"
+<link rel="stylesheet" href="${path}/resources/css/catalogoUser.css"
 	type="text/css" media="all">
 <script src="https://api.filestackapi.com/filestack.js"></script>
 <script src="${path}/resources/js/alertUtils.js"></script>

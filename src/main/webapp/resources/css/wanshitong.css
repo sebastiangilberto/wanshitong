@@ -1,3 +1,26 @@
+/*-- Index-Page-Styling --*/
+body {
+	background: url("/resources/images/background.jpg");
+	background: url("../images/background.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+}
+
+.title {
+	color: #EEE !important;
+}
+.subtitle {
+	color: #EEE !important;
+}
+
+/*-- Menu --*/
 .menu {
 	background-color: #00547E;
 	border-bottom: 4px solid #04A3ED;
@@ -31,7 +54,7 @@
 	padding: 0px;
 	margin: 0px;
 	text-decoration: none;
-	color: white;
+	color: #EEE;
 	font-size: 25px;
 	padding: 5px 30px;
 	vertical-align: -webkit-baseline-middle;

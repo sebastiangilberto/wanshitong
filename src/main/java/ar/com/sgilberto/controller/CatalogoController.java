@@ -21,7 +21,6 @@ public class CatalogoController {
 	private LibroService libroService;
 
 	@RequestMapping(method = RequestMethod.GET)
-	@ResponseBody
 	public ModelAndView init(Model model) {
 
 		model.addAttribute("LibroDto", new LibroDto());

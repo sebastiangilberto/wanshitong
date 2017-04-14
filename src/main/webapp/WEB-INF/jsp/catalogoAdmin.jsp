@@ -1,15 +1,19 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <c:set var="path" value="${pageContext.servletContext.contextPath}" />
 
 <!DOCTYPE html>
 <html lang="en">
 
+<sec:csrfMetaTags />
+
 <!-- Header -->
 <jsp:include page="header.jsp" />
 
 <!-- Javascript -->
-<link rel="stylesheet" href="${path}/resources/css/admin.css"
+<link rel="stylesheet" href="${path}/resources/css/catalogoAdmin.css"
 	type="text/css" media="all">
 <script src="https://api.filestackapi.com/filestack.js"></script>
 <script src="${path}/resources/js/alertUtils.js"></script>
@@ -29,6 +33,7 @@
 <!-- Body -->
 <body>
 
+
 	<jsp:include page="menu.jsp"></jsp:include>
 
 	<div class="container-fluid main">
@@ -38,7 +43,7 @@
 
 		<div class="row">
 			<button type="button" class="btn btn-primary btn-lg"
-				id="btnAgregarLibro">Add Book</button>
+				id="btnModalAgregarLibro">Add Book</button>
 		</div>
 
 		<!-- Catalogo -->

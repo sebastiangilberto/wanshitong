@@ -1,3 +1,5 @@
+/*
+
 /*-- Reset Code --*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 	blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
@@ -168,8 +170,8 @@ input[type="text"], input[type="password"] {
 }
 
 input[type="text"] {
-	background: url("/resources/images/mail.png") no-repeat 13px 11px;
-	background: url("../images/mail.png") no-repeat 13px 11px;
+	background: url("/resources/images/user.png") no-repeat 13px 11px;
+	background: url("../images/user.png") no-repeat 13px 11px;
 	background-size: 25px;
 }
 
@@ -424,8 +426,8 @@ input[type="submit"]:hover {
 		margin-bottom: 15px;
 	}
 	input[type="text"] {
-		background: url("/resources/images/mail.png") no-repeat 13px 8px;
-		background: url("../images/mail.png") no-repeat 13px 11px;
+		background: url("/resources/images/user.png") no-repeat 13px 8px;
+		background: url("../images/user.png") no-repeat 13px 11px;
 		background-size: 20px;
 	}
 	input[type="password"] {

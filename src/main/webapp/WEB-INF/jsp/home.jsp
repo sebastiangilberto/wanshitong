@@ -18,13 +18,18 @@
 	<jsp:include page="menu.jsp"></jsp:include>
 
 	<div class="container-fluid main">
-		<h1>Title : ${title}</h1>
-		<h1>Message : ${message}</h1>
+
+		<h1 class="title">Title : ${title}</h1>
+		<h2 class="subtitle">Message : ${message}</h2>
 
 		<sec:authorize access="hasRole('ROLE_USER')">
 		LOGIN SUCCESSFUL
-	</sec:authorize>
+			<c:if test="${pageContext.request.userPrincipal.name != null}">
+				<h2>Bienvenido : ${pageContext.request.userPrincipal.name}</h2>
+			</c:if>
+		</sec:authorize>
+
 	</div>
-	
+
 </body>
 </html>

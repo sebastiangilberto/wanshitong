@@ -12,7 +12,7 @@ public class HomeController {
 	public ModelAndView defaulta() {
 
 		ModelAndView model = new ModelAndView();
-		model.setViewName("index");
+		model.setViewName("redirect:/login");
 		return model;
 
 	}
