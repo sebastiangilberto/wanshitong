@@ -167,7 +167,7 @@ input[type="text"], input[type="password"] {
 }
 
 input[type="text"] {
-	background: url("../images/mail.png") no-repeat 13px 11px;
+	background: url(".s./images/mail.png") no-repeat 13px 11px;
 	background-size: 25px;
 }
 
