@@ -10,9 +10,9 @@
 <jsp:include page="fragments/header.jsp" />
 
 <!-- Javascript & Css Login -->
-<link rel="stylesheet" href="${path}/resources/css/login.css"
+<link rel="stylesheet" href="resources/css/login.css"
 	type="text/css" media="all">
-<script src="${path}/resources/js/login.js"></script>
+<script src="resources/js/login.js"></script>
 
 <!-- Body -->
 <body>
