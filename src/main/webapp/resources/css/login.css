@@ -106,6 +106,10 @@ img {
 /*-- Index-Page-Styling --*/
 body {
 	background: url("../images/background.jpg");
+	background: url("../resources/images/background.jpg");
+	background: url("/resources/images/background.jpg");
+	background: url("/images/background.jpg");
+	background: url("resources/images/background.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
@@ -167,7 +171,7 @@ input[type="text"], input[type="password"] {
 }
 
 input[type="text"] {
-	background: url(".s./images/mail.png") no-repeat 13px 11px;
+	background: url("../images/mail.png") no-repeat 13px 11px;
 	background-size: 25px;
 }
 
