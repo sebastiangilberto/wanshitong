@@ -62,7 +62,6 @@ public final class LibroServiceImpl implements LibroService {
 	private Libro transformToEntity(LibroDto libroDto) {
 
 		Libro libro = new Libro();
-		libro.setId(libroDto.getId());
 		libro.setAutor(libroDto.getAutor());
 		libro.setTitulo(libroDto.getTitulo());
 		libro.setGenero(libroDto.getGenero());
