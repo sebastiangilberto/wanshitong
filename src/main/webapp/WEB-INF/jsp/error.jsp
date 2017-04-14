@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<jsp:include page="fragments/header.jsp" />
+<jsp:include page="header.jsp" />
 
 <body>
 
@@ -17,7 +17,7 @@
 
 	</div>
 
-	<jsp:include page="fragments/footer.jsp" />
+	<jsp:include page="footer.jsp" />
 
 </body>
 </html>

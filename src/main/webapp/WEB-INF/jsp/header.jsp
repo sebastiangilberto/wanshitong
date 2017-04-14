@@ -1,7 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<c:set var="path" value="${pageContext.request.contextPath}"/>
+<c:set var="servletContextPath" value="${pageContext.servletContext.contextPath}" />
 
 <head>
 <title>Wanshitong</title>
@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <!-- Icons -->
-<link rel="shortcut icon" href="${path}/resources/ico/favicon.ico"
+<link rel="shortcut icon" href="${servletContextPath}/resources/ico/favicon.ico"
 	type="image/x-icon" />
 
 <!-- Css -->

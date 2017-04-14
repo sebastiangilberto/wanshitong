@@ -17,15 +17,15 @@
 <html lang="en">
 
 <!-- Header -->
-<jsp:include page="fragments/header.jsp" />
+<jsp:include page="header.jsp" />
 
 <!-- Javascript && Css Admin -->
-<link rel="stylesheet" href="${path}/resources/css/admin.css" type="text/css"
+<link rel="stylesheet" href="${servletContextPath}/resources/css/admin.css" type="text/css"
 	media="all">
 <script src="https://api.filestackapi.com/filestack.js"></script>
-<script src="${path}/resources/js/alertUtils.js"></script>
-<script src="${path}/resources/js/catalogo.js"></script>
-<script src="${path}/resources/js/serviceCatalogo.js"></script>
+<script src="${servletContextPath}/resources/js/alertUtils.js"></script>
+<script src="${servletContextPath}/resources/js/catalogo.js"></script>
+<script src="${servletContextPath}/resources/js/serviceCatalogo.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css"
 	type="text/css" media="all">
@@ -39,7 +39,7 @@
 
 <body>
 
-	<jsp:include page="fragments/menu.jsp"></jsp:include>
+	<jsp:include page="menu.jsp"></jsp:include>
 
 	<div class="container-fluid main">
 

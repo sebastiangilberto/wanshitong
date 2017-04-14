@@ -17,12 +17,12 @@
 <html lang="en">
 
 <!-- Header -->
-<jsp:include page="fragments/header.jsp" />
+<jsp:include page="header.jsp" />
 
 <!-- Javascript & Css Login -->
-<link rel="stylesheet" href="resources/css/login.css"
+<link rel="stylesheet" href="${servletContextPath}/resources/css/login.css"
 	type="text/css" media="all">
-<script src="resources/js/login.js"></script>
+<script src="${servletContextPath}/resources/js/login.js"></script>
 
 <!-- Body -->
 <body>
@@ -68,7 +68,7 @@
 		</form>
 	</div>
 
-	<jsp:include page="fragments/footer.jsp" />
+	<jsp:include page="footer.jsp" />
 </body>
 
 </html>
