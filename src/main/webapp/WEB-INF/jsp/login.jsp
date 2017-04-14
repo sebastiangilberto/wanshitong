@@ -1,17 +1,6 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@page session="true"%>
-<c:set var="path" value="${pageContext.request.contextPath}"/>
-<c:set var="url" value="${pageContext.request.requestURL}"/>
-<c:set var="server" value="${pageContext.request.serverName}" />
-<c:set var="localName" value="${pageContext.request.localName}" />
-<c:set var="scheme" value="${pageContext.request.scheme}" />
-<c:set var="servletContextPath" value="${pageContext.servletContext.contextPath}" />
-<c:set var="servletContextName" value="${pageContext.servletContext.servletContextName}" />
-<c:set var="uri" value="${pageContext.request.requestURI}" />
-<c:set var="page" value="${pageContext.page}" />
+<c:set var="path" value="${pageContext.servletContext.contextPath}" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,23 +9,13 @@
 <jsp:include page="header.jsp" />
 
 <!-- Javascript & Css Login -->
-<link rel="stylesheet" href="${servletContextPath}/resources/css/login.css"
+<link rel="stylesheet" href="${path}/resources/css/login.css"
 	type="text/css" media="all">
-<script src="${servletContextPath}/resources/js/login.js"></script>
+<script src="${path}/resources/js/login.js"></script>
 
 <!-- Body -->
 <body>
-	
-	<p>PATH: <c:out value="${path}"></c:out></p>
-	<p>URL: <c:out value="${url}"></c:out></p>
-	<p>SERVER:<c:out value="${server}"></c:out></p>
-	<p>LOCALNAME: <c:out value="${localName}"></c:out></p>
-	<p>SCHEME: <c:out value="${scheme}"></c:out></p>
-	<p>SERVLETCONTEXTPATH: <c:out value="${servletContextPath}"></c:out></p>
-	<p>SERVLETCONTEXTNAME: <c:out value="${servletContextName}"></c:out></p>
-	<p>URI: <c:out value="${uri}"></c:out></p>
-	<p>PAGE: <c:out value="${page}"></c:out></p>
-	
+
 	<h1>WANSHITONG</h1>
 	<h2>Log in to your Account</h2>
 	<div class="container-agile">
