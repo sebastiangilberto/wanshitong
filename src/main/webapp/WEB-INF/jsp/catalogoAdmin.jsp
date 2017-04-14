@@ -42,8 +42,8 @@
 		</div>
 
 		<div class="row">
-			<button type="button" class="btn btn-primary btn-lg"
-				id="btnModalAgregarLibro">Add Book</button>
+			<button type="button" class="btn btn-success btn-lg"
+				id="btnModalAgregarLibro">Agregar Libro</button>
 		</div>
 
 		<!-- Catalogo -->

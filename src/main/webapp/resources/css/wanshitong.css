@@ -11,13 +11,11 @@ body {
 	-o-background-size: cover;
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
+	color: #EEE !important;
 }
 
-.title {
-	color: #EEE !important;
-}
-.subtitle {
-	color: #EEE !important;
+table{
+	color: black !important;
 }
 
 /*-- Menu --*/

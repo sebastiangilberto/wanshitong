@@ -18,8 +18,8 @@
 
 	<div class="container-fluid main">
 
-		<h1 class="title">Title : ${title}</h1>
-		<h2 class="subtitle">Message : ${message}</h2>
+		<h1>Title : ${title}</h1>
+		<h2>Message : ${message}</h2>
 
 		<div class="row">
 			<a type="button" class="btn btn-info" href="${path}/admin/libros">Libros</a>

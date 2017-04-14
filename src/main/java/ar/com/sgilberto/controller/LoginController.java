@@ -25,6 +25,9 @@ public class LoginController {
 		if (logout != null) {
 			model.addObject("msg", "You've been logged out successfully.");
 		}
+
+		model.addObject("title", "WANSHITONG");
+		model.addObject("message", "Log in to your Account");
 		model.setViewName("login");
 
 		return model;
@@ -35,8 +38,8 @@ public class LoginController {
 	public ModelAndView defaultPage() {
 
 		ModelAndView model = new ModelAndView();
-		model.addObject("title", "Spring Security Login Form - Database Authentication");
-		model.addObject("message", "This is default page!");
+		model.addObject("title", "WANSHITONG");
+		model.addObject("message", "Peliculas y Libros");
 		model.setViewName("home");
 		return model;
 

@@ -19,13 +19,14 @@
 
 	<div class="container-fluid main">
 
-		<h1 class="title">Title : ${title}</h1>
-		<h2 class="subtitle">Message : ${message}</h2>
+		<h1>${title}</h1>
+		<h2>${message}</h2>
 
 		<sec:authorize access="hasRole('ROLE_USER')">
-		LOGIN SUCCESSFUL
 			<c:if test="${pageContext.request.userPrincipal.name != null}">
-				<h2>Bienvenido : ${pageContext.request.userPrincipal.name}</h2>
+				<h2 class="subtitle">Bienvenido :
+					${pageContext.request.userPrincipal.name}</h2>
+				<a type="button" class="btn btn-info" href="${path}/catalogo">Libros</a>
 			</c:if>
 		</sec:authorize>
 

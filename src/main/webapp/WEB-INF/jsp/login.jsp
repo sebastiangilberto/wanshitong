@@ -16,8 +16,9 @@
 <!-- Body -->
 <body>
 
-	<h1>WANSHITONG</h1>
-	<h2>Log in to your Account</h2>
+	<h1>${title}</h1>
+	<h2>${message}</h2>
+	
 	<div class="container-agile">
 		<c:if test="${not empty error}">
 			<div class="alert alert-danger">${error}</div>
