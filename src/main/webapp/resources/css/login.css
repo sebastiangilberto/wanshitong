@@ -105,7 +105,7 @@ img {
 
 /*-- Index-Page-Styling --*/
 body {
-	background: url("/wanshitong/resources/images/background.jpg");
+	background: url("/resources/images/background.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
@@ -167,12 +167,12 @@ input[type="text"], input[type="password"] {
 }
 
 input[type="text"] {
-	background: url("/wanshitong/resources/images/mail.png") no-repeat 13px 11px;
+	background: url("/resources/images/mail.png") no-repeat 13px 11px;
 	background-size: 25px;
 }
 
 input[type="password"] {
-	background: url("/wanshitong/resources/images/password.png") no-repeat 13px 11px;
+	background: url("/resources/images/password.png") no-repeat 13px 11px;
 	background-size: 25px;
 }
 
@@ -213,7 +213,7 @@ ul.agileinfotickwthree li input[type="checkbox"]+label span:first-child
 ul.agileinfotickwthree li input[type="checkbox"]:checked+label span:first-child:before
 	{
 	content: "";
-	background: url("/wanshitong/resources/images/tick.png") no-repeat;
+	background: url("/resources/images/tick.png") no-repeat;
 	position: absolute;
 	left: 3px;
 	top: 3px;
@@ -421,11 +421,11 @@ input[type="submit"]:hover {
 		margin-bottom: 15px;
 	}
 	input[type="text"] {
-		background: url("/wanshitong/resources/images/mail.png") no-repeat 13px 8px;
+		background: url("/resources/images/mail.png") no-repeat 13px 8px;
 		background-size: 20px;
 	}
 	input[type="password"] {
-		background: url("/wanshitong/resources/images/password.png") no-repeat 13px 7px;
+		background: url("/resources/images/password.png") no-repeat 13px 7px;
 		background-size: 20px;
 	}
 	ul.tick {
