@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <!-- Icons -->
-<link rel="shortcut icon" href="resources/ico/favicon.ico"
+<link rel="shortcut icon" href="/resources/ico/favicon.ico"
 	type="image/x-icon" />
 
 <!-- Css -->

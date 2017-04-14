@@ -1,17 +1,18 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page session="true"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 
 <!-- Menu -->
 <div class="menu">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a href="${pageContext.request.contextPath}">Wanshitong</a>
+			<a href="${path}">Wanshitong</a>
 		</div>
 		<div>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
 						Sign Up</a></li>
-				<li><a href="${pageContext.request.contextPath}/login"><span
+				<li><a href="${path}/login"><span
 						class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				<c:if test="${pageContext.request.userPrincipal.name != null}">
 					<li><a href="wanshitong.service.logout()"><span

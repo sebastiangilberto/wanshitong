@@ -2,9 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<c:set var="req" value="${pageContext.request}" />
-<c:set var="url">${req.requestURL}</c:set>
-<c:set var="uri" value="${req.requestURI}" />
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 
 <!DOCTYPE html>
@@ -31,27 +28,11 @@
 <script
 	src="https://cdn.datatables.net/1.10.13/js/dataTables.material.min.js"></script>
 
-<script>
-	document.addEventListener("DOMContentLoaded", function() {
-
-		document.getElementById('labelpath').value = window.location.pathname
-				.substring(0, window.location.pathname.indexOf("/", 2));
-	});
-</script>
-
 <!-- Body -->
 <body>
 
 	<jsp:include page="fragments/menu.jsp"></jsp:include>
 
-	<p>REQ es : <c:out value="${req}"></c:out></p>
-	<p>URL es : <c:out value="${url}"></c:out></p>
-	<p>URI es : <c:out value="${uri}"></c:out></p>
-	<p>PATH es : <c:out value="${path}"></c:out></p>
-		<p>
-		PATH JS es: <input type="text" id="labelpath"></input>
-	</p>
-	
 	<div class="container-fluid main">
 		<div class="row">
 			<div class="messages-list span12"></div>
