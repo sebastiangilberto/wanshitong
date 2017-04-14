@@ -3,8 +3,14 @@ var wanshitong = wanshitong || {};
 wanshitong.service = (function() {
 
 	function getContextPath() {
-		return window.location.pathname.substring(0, window.location.pathname
+		var path = window.location.pathname.substring(0, window.location.pathname
 				.indexOf("/", 2));
+		
+		if(path == '/wanshitong'){
+			return path;
+		} else {
+			return '';
+		}
 	}
 
 	function logout() {
