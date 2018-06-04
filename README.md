@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Product Name
 > Short blurb about what your product does.
 
@@ -64,3 +65,6 @@ Distributed under the XYZ license. See ``LICENSE`` for more information.
 [npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
+=======
+# wanshitong
+>>>>>>> f988453a9e4287372bdddcf46878c15632e690ba
